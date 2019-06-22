@@ -61,6 +61,12 @@ struct Lenguage {
     static let spa = "es-CO"
 }
 
+struct Category {
+    static let topRated = "topRated"
+    static let upcoming = "upcoming"
+    static let popular = "popular"
+}
+
 struct ProjectKeys {
     static let token    = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OThmMzliN2IwZjBkNmJkN2FjYWYwZjM5NDcyYjI2NCIsInN1YiI6IjVkMGQ2ZTE2MGUwYTI2M2RkZGNkNWExNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EQC3Lq1UlQV6oUbGDhxducTP-E1IqQKjMc1rSbeAC1Y"
     static let apiKey    = "898f39b7b0f0d6bd7acaf0f39472b264"
