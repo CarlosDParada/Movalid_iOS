@@ -37,8 +37,8 @@ class ViewController: UIViewController {
             for filmSng in filmsPopular.results! {
                 CoreDataHandler.deleteMovalid(by: Category.popular)
                 CoreDataHandler.saveFilm(singleFilm: filmSng, category: Category.popular)
-                for genr in CoreDataHandler.getAllGeners() {
-                    print("\(genr.id ?? 0) - \(genr.name ?? "unkonw")")
+                for film in CoreDataHandler.getAllMovalid(by: Category.popular) {
+                    print("\(film.id ?? 0) - \(film.title ?? "unkonw")")
                 }
             }
             

@@ -19,18 +19,7 @@ extension WebServiceManager {
         }
         return nil
     }
-    
-    func turnToObject2<T>(jsonString : String,  type: T.Type) -> T? where T: Decodable {
-        do {
-            guard let allData = try? JSONSerialization.data(withJSONObject: jsonString, options: .sortedKeys) else {
-                return nil
-            }
-            return try JSONDecoder().decode(type, from: allData)
-        } catch let error {
-            print("Error Get As Data =\(error.localizedDescription)")
-        }
-        return nil
-    }
+
 }
 
 extension JSONDecoder {

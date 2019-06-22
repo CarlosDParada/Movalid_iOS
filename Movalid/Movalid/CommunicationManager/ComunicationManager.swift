@@ -74,11 +74,13 @@ class WebServiceManager {
 //            let json: String = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as! String
 //            let obj : Result <ResultSearch> = WebServiceManager().turnToObject(data: data!, type: ResultSearch.self)
             //            let obj = WebServiceManager().turnToObject2(jsonString: json, type: ResultSearch.self)
-//            if(obj != nil){
-//                onCompletion(obj!)
-//            }else{
-//                onError(error!)
-//            }
+            if(obj.isSuccess){
+                obj.flatMap({ popularMoviesObjet in
+                     onCompletion(popularMoviesObjet)
+                })
+            }else{
+                onError(obj.error!)
+            }
         }
     }
     
