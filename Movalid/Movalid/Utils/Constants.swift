@@ -50,8 +50,8 @@ struct EndPoint {
 
 struct Variable {
     static let type = Configuration.shared.type
-    static let apiKey = "apiKey="
-    static let lenguage = "&lenguage="
+    static let apiKey = "api_key="
+    static let lenguage = "&language="
     static let page = "&page="
     static let query = "&query="
 }

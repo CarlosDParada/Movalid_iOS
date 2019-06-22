@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Result: Codable {
+class ResultSearch: Codable {
     var page: Int = 0
     var results: [Film]?
     var total_pages: Int = 0

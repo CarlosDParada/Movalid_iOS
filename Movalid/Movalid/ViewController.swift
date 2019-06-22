@@ -13,6 +13,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let serviceManager : WebServiceManager = WebServiceManager()
+        serviceManager.getGeners(onCompletion: { geners in
+            for gener in geners.genres! {
+                CoreDataHandler.saveGeners(singleGen:gener)
+                for genr in CoreDataHandler.getAllGeners() {
+                    print("\(genr.id) - \(genr.name)")
+                }
+                
+            }
+        }) { (Error) in
+            //
+        }
     }
 
 

@@ -31,6 +31,16 @@
 		07695FE022BDCD34001800E5 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FDE22BDCD34001800E5 /* Film.swift */; };
 		07695FE222BDD297001800E5 /* DataLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FE122BDD297001800E5 /* DataLocal.swift */; };
 		07695FE322BDD297001800E5 /* DataLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FE122BDD297001800E5 /* DataLocal.swift */; };
+		07695FE522BDE6B6001800E5 /* ResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FE422BDE6B6001800E5 /* ResponseExtension.swift */; };
+		07695FE622BDE6B6001800E5 /* ResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FE422BDE6B6001800E5 /* ResponseExtension.swift */; };
+		07695FED22BDF494001800E5 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FEC22BDF494001800E5 /* CoreDataHandler.swift */; };
+		07695FEE22BDF494001800E5 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FEC22BDF494001800E5 /* CoreDataHandler.swift */; };
+		07695FF822BE00A9001800E5 /* Gener+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FF622BE00A9001800E5 /* Gener+CoreDataClass.swift */; };
+		07695FF922BE00A9001800E5 /* Gener+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FF622BE00A9001800E5 /* Gener+CoreDataClass.swift */; };
+		07695FFA22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FF722BE00A9001800E5 /* Gener+CoreDataProperties.swift */; };
+		07695FFB22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FF722BE00A9001800E5 /* Gener+CoreDataProperties.swift */; };
+		07695FFD22BE077D001800E5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FFC22BE077D001800E5 /* CoreDataStack.swift */; };
+		07695FFE22BE077D001800E5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FFC22BE077D001800E5 /* CoreDataStack.swift */; };
 		6430E8636BDA3C87F42B788E /* Pods_MovalidTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88F3159A89158DDF7C8082D /* Pods_MovalidTests.framework */; };
 		A14EF1831BCDE3BAC54657D7 /* Pods_MovalidUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3414A6A0F1DA5F9D7C96B4FF /* Pods_MovalidUITests.framework */; };
 		B96B6F6BECCDE0C5FE1F98F2 /* Pods_Movalid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835518EE37AA466E7136B40 /* Pods_Movalid.framework */; };
@@ -76,6 +86,11 @@
 		07695FDB22BDCAE5001800E5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		07695FDE22BDCD34001800E5 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		07695FE122BDD297001800E5 /* DataLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLocal.swift; sourceTree = "<group>"; };
+		07695FE422BDE6B6001800E5 /* ResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseExtension.swift; sourceTree = "<group>"; };
+		07695FEC22BDF494001800E5 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		07695FF622BE00A9001800E5 /* Gener+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gener+CoreDataClass.swift"; sourceTree = "<group>"; };
+		07695FF722BE00A9001800E5 /* Gener+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gener+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		07695FFC22BE077D001800E5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		243BA2853C9618416F566734 /* Pods-MovalidUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovalidUITests.release.xcconfig"; path = "Target Support Files/Pods-MovalidUITests/Pods-MovalidUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2FBB5CAC083EADF7CD9188AD /* Pods-MovalidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovalidTests.release.xcconfig"; path = "Target Support Files/Pods-MovalidTests/Pods-MovalidTests.release.xcconfig"; sourceTree = "<group>"; };
 		3414A6A0F1DA5F9D7C96B4FF /* Pods_MovalidUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovalidUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +155,7 @@
 		07695F9522BDA17E001800E5 /* Movalid */ = {
 			isa = PBXGroup;
 			children = (
+				07695FEA22BDF477001800E5 /* Handle */,
 				07695FD022BDA74C001800E5 /* Model */,
 				07695FC922BDA298001800E5 /* Utils */,
 				07695FC822BDA28C001800E5 /* CommunicationManager */,
@@ -176,6 +192,7 @@
 		07695FC722BDA27F001800E5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				07695FE422BDE6B6001800E5 /* ResponseExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -207,6 +224,25 @@
 				07695FDE22BDCD34001800E5 /* Film.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		07695FEA22BDF477001800E5 /* Handle */ = {
+			isa = PBXGroup;
+			children = (
+				07695FF522BE0084001800E5 /* Entities */,
+				07695FEC22BDF494001800E5 /* CoreDataHandler.swift */,
+				07695FFC22BE077D001800E5 /* CoreDataStack.swift */,
+			);
+			path = Handle;
+			sourceTree = "<group>";
+		};
+		07695FF522BE0084001800E5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				07695FF622BE00A9001800E5 /* Gener+CoreDataClass.swift */,
+				07695FF722BE00A9001800E5 /* Gener+CoreDataProperties.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		B12DF7F7EF069FBDCC5C5420 /* Frameworks */ = {
@@ -463,15 +499,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				07695FDC22BDCAE5001800E5 /* Result.swift in Sources */,
+				07695FF822BE00A9001800E5 /* Gener+CoreDataClass.swift in Sources */,
 				07695FD222BDB752001800E5 /* Configuration.swift in Sources */,
+				07695FED22BDF494001800E5 /* CoreDataHandler.swift in Sources */,
 				07695F9922BDA17E001800E5 /* ViewController.swift in Sources */,
 				07695F9F22BDA17E001800E5 /* Movalid.xcdatamodeld in Sources */,
 				07695FE222BDD297001800E5 /* DataLocal.swift in Sources */,
+				07695FFD22BE077D001800E5 /* CoreDataStack.swift in Sources */,
+				07695FFA22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */,
 				07695FD922BDCA64001800E5 /* Geners.swift in Sources */,
 				07695FDF22BDCD34001800E5 /* Film.swift in Sources */,
 				07695FD522BDB81A001800E5 /* Services.swift in Sources */,
 				07695F9722BDA17E001800E5 /* AppDelegate.swift in Sources */,
 				07695FCE22BDA721001800E5 /* ComunicationManager.swift in Sources */,
+				07695FE522BDE6B6001800E5 /* ResponseExtension.swift in Sources */,
 				07695FCB22BDA31B001800E5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,11 +523,16 @@
 			files = (
 				07695FD622BDB81A001800E5 /* Services.swift in Sources */,
 				07695FDA22BDCA64001800E5 /* Geners.swift in Sources */,
+				07695FEE22BDF494001800E5 /* CoreDataHandler.swift in Sources */,
+				07695FFB22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */,
 				07695FCF22BDA723001800E5 /* ComunicationManager.swift in Sources */,
 				07695FAF22BDA17F001800E5 /* MovalidTests.swift in Sources */,
 				07695FDD22BDCAE5001800E5 /* Result.swift in Sources */,
+				07695FFE22BE077D001800E5 /* CoreDataStack.swift in Sources */,
 				07695FE022BDCD34001800E5 /* Film.swift in Sources */,
+				07695FE622BDE6B6001800E5 /* ResponseExtension.swift in Sources */,
 				07695FD322BDB752001800E5 /* Configuration.swift in Sources */,
+				07695FF922BE00A9001800E5 /* Gener+CoreDataClass.swift in Sources */,
 				07695FE322BDD297001800E5 /* DataLocal.swift in Sources */,
 				07695FCC22BDA31B001800E5 /* Constants.swift in Sources */,
 			);

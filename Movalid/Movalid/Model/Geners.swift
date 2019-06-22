@@ -1,5 +1,5 @@
 //
-//  Geners.swift
+//  GenersGlobal.swift
 //  Movalid
 //
 //  Created by Carlos Parada on 6/21/19.
@@ -7,11 +7,15 @@
 //
 
 import UIKit
-struct Geners : Codable {
-    var genres : [StandarModel]?
-    
+struct GenersGlobal : Codable {
+    var genres : [StandarModel]?    
 }
 struct StandarModel: Codable {
-    var id: Int?
-    var name: String?
+    var id: Int! = 0
+    var name: String! = ""
+    
+    init(id :Int , name: String) {
+        self.id = id
+        self.name = name
+    }
 }
