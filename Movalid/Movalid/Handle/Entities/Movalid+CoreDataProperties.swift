@@ -19,13 +19,12 @@ extension Movalid {
     @NSManaged public var vote_count: Int32
     @NSManaged public var id: Int32
     @NSManaged public var video: Bool
-    @NSManaged public var vote_average: Int32
     @NSManaged public var title: String?
-    @NSManaged public var popularity: Int32
+    @NSManaged public var type: String?
     @NSManaged public var poster_path: String?
     @NSManaged public var original_language: String?
     @NSManaged public var original_title: String?
-    @NSManaged public var genre_ids: [Int32]?
+    @NSManaged public var genre_ids: [NSNumber]?
     @NSManaged public var backdrop_path: String?
     @NSManaged public var overview: String?
     @NSManaged public var release_date: String?

@@ -9,10 +9,8 @@
 import UIKit
 
 class ResultSearch: Codable {
-    var page: Int = 0
+    var page: Int?
     var results: [Film]?
-    var total_pages: Int = 0
-    var total_results: Int = 0
-    var status_code: String?
+    var total_pages: Int?
+    var total_results: Int?
 }
-

@@ -16,8 +16,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         let serviceManager : WebServiceManager = WebServiceManager()
         serviceManager.getGeners(onCompletion: { geners in
-            CoreDataHandler.deleteGeners()
             for gener in geners.genres! {
+                CoreDataHandler.deleteGeners()
                 CoreDataHandler.saveGeners(singleGen:gener)
                 for genr in CoreDataHandler.getAllGeners() {
                     print("\(genr.id ?? 0) - \(genr.name ?? "unkonw")")
@@ -32,7 +32,15 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         let serviceManager : WebServiceManager = WebServiceManager()
-        serviceManager.getPopularMovies(page: 1, onCompletion: { (filmsPopular) in
+        serviceManager.getPopularMovies(page: 1, onCompletion: {
+            (filmsPopular) in
+            for filmSng in filmsPopular.results! {
+                CoreDataHandler.deleteMovalid(by: Category.popular)
+                CoreDataHandler.saveFilm(singleFilm: filmSng, category: Category.popular)
+                for genr in CoreDataHandler.getAllGeners() {
+                    print("\(genr.id ?? 0) - \(genr.name ?? "unkonw")")
+                }
+            }
             
         }) { (error) in
             

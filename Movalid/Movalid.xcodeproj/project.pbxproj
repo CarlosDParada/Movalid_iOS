@@ -23,10 +23,10 @@
 		07695FD322BDB752001800E5 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FD122BDB752001800E5 /* Configuration.swift */; };
 		07695FD522BDB81A001800E5 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FD422BDB81A001800E5 /* Services.swift */; };
 		07695FD622BDB81A001800E5 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FD422BDB81A001800E5 /* Services.swift */; };
-		07695FD922BDCA64001800E5 /* Geners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FD822BDCA63001800E5 /* Geners.swift */; };
-		07695FDA22BDCA64001800E5 /* Geners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FD822BDCA63001800E5 /* Geners.swift */; };
-		07695FDC22BDCAE5001800E5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FDB22BDCAE5001800E5 /* Result.swift */; };
-		07695FDD22BDCAE5001800E5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FDB22BDCAE5001800E5 /* Result.swift */; };
+		07695FD922BDCA64001800E5 /* GenersGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FD822BDCA63001800E5 /* GenersGlobal.swift */; };
+		07695FDA22BDCA64001800E5 /* GenersGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FD822BDCA63001800E5 /* GenersGlobal.swift */; };
+		07695FDC22BDCAE5001800E5 /* ResultSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FDB22BDCAE5001800E5 /* ResultSearch.swift */; };
+		07695FDD22BDCAE5001800E5 /* ResultSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FDB22BDCAE5001800E5 /* ResultSearch.swift */; };
 		07695FDF22BDCD34001800E5 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FDE22BDCD34001800E5 /* Film.swift */; };
 		07695FE022BDCD34001800E5 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FDE22BDCD34001800E5 /* Film.swift */; };
 		07695FE222BDD297001800E5 /* DataLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FE122BDD297001800E5 /* DataLocal.swift */; };
@@ -86,8 +86,8 @@
 		07695FCD22BDA721001800E5 /* ComunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComunicationManager.swift; sourceTree = "<group>"; };
 		07695FD122BDB752001800E5 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		07695FD422BDB81A001800E5 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		07695FD822BDCA63001800E5 /* Geners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geners.swift; sourceTree = "<group>"; };
-		07695FDB22BDCAE5001800E5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		07695FD822BDCA63001800E5 /* GenersGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenersGlobal.swift; sourceTree = "<group>"; };
+		07695FDB22BDCAE5001800E5 /* ResultSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSearch.swift; sourceTree = "<group>"; };
 		07695FDE22BDCD34001800E5 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		07695FE122BDD297001800E5 /* DataLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLocal.swift; sourceTree = "<group>"; };
 		07695FE422BDE6B6001800E5 /* ResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseExtension.swift; sourceTree = "<group>"; };
@@ -225,8 +225,8 @@
 			children = (
 				07695FE122BDD297001800E5 /* DataLocal.swift */,
 				07695FD122BDB752001800E5 /* Configuration.swift */,
-				07695FD822BDCA63001800E5 /* Geners.swift */,
-				07695FDB22BDCAE5001800E5 /* Result.swift */,
+				07695FD822BDCA63001800E5 /* GenersGlobal.swift */,
+				07695FDB22BDCAE5001800E5 /* ResultSearch.swift */,
 				07695FDE22BDCD34001800E5 /* Film.swift */,
 			);
 			path = Model;
@@ -506,7 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07695FDC22BDCAE5001800E5 /* Result.swift in Sources */,
+				07695FDC22BDCAE5001800E5 /* ResultSearch.swift in Sources */,
 				07695FF822BE00A9001800E5 /* Gener+CoreDataClass.swift in Sources */,
 				07695FD222BDB752001800E5 /* Configuration.swift in Sources */,
 				07695FED22BDF494001800E5 /* CoreDataHandler.swift in Sources */,
@@ -515,7 +515,7 @@
 				07695FE222BDD297001800E5 /* DataLocal.swift in Sources */,
 				07695FFD22BE077D001800E5 /* CoreDataStack.swift in Sources */,
 				07695FFA22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */,
-				07695FD922BDCA64001800E5 /* Geners.swift in Sources */,
+				07695FD922BDCA64001800E5 /* GenersGlobal.swift in Sources */,
 				07695FDF22BDCD34001800E5 /* Film.swift in Sources */,
 				07695FD522BDB81A001800E5 /* Services.swift in Sources */,
 				07695F9722BDA17E001800E5 /* AppDelegate.swift in Sources */,
@@ -532,14 +532,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				07695FD622BDB81A001800E5 /* Services.swift in Sources */,
-				07695FDA22BDCA64001800E5 /* Geners.swift in Sources */,
+				07695FDA22BDCA64001800E5 /* GenersGlobal.swift in Sources */,
 				0769600222BE124E001800E5 /* Movalid+CoreDataProperties.swift in Sources */,
 				07695FEE22BDF494001800E5 /* CoreDataHandler.swift in Sources */,
 				07695FFB22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */,
 				07695FCF22BDA723001800E5 /* ComunicationManager.swift in Sources */,
 				0769600422BE124E001800E5 /* Movalid+CoreDataClass.swift in Sources */,
 				07695FAF22BDA17F001800E5 /* MovalidTests.swift in Sources */,
-				07695FDD22BDCAE5001800E5 /* Result.swift in Sources */,
+				07695FDD22BDCAE5001800E5 /* ResultSearch.swift in Sources */,
 				07695FFE22BE077D001800E5 /* CoreDataStack.swift in Sources */,
 				07695FE022BDCD34001800E5 /* Film.swift in Sources */,
 				07695FE622BDE6B6001800E5 /* ResponseExtension.swift in Sources */,
