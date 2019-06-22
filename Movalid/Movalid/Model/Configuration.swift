@@ -11,4 +11,5 @@ class Configuration {
     static var shared = Configuration()
     var type : String = "movie"
     var lenguage : String = "en-US"
+    
 }

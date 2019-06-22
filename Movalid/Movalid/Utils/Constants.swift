@@ -67,8 +67,22 @@ struct Category {
     static let popular = "popular"
 }
 
+struct ErrorConnection {
+    static let none   = 0
+    static let requestTimeOut   = -1001
+    static let localNoInternet  = -1005
+    static let noInternet       = -1009
+    static let requestError     = -1011
+    static let connectionAbort     = 53
+    
+}
+
 struct ProjectKeys {
     static let token    = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OThmMzliN2IwZjBkNmJkN2FjYWYwZjM5NDcyYjI2NCIsInN1YiI6IjVkMGQ2ZTE2MGUwYTI2M2RkZGNkNWExNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EQC3Lq1UlQV6oUbGDhxducTP-E1IqQKjMc1rSbeAC1Y"
     static let apiKey    = "898f39b7b0f0d6bd7acaf0f39472b264"
     
+}
+
+struct MovalidSParams {
+    static let errorGeneric             = "errorGeneric"
 }

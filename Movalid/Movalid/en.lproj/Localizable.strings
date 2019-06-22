@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Movalid
+
+  Created by Carlos Parada on 6/22/19.
+  Copyright © 2019 Carlos Parada. All rights reserved.
+*/
+
+"alert.msg.accept" ="Aceptar";
+"alert.msg.cancel" ="Cancelar";
+"alert.msg.entiendo"="Entiendo";
+"alert.msg.continue" ="Continuar";
+"alert.msg.exit" ="Salir";
+"alert.msg.loading" ="Cargando";
+"alert.msg.important"="Importante";
+"alert.msg.configurate"="Configurar";
+"alert.msg.reintentar"="Reintentar";
+"alert.msg.actualizar"="Actualizar";
+"alert.msg.perfect"="Perfecto !!";
+
+"msg.error.service.general"= "¡Uups! Ocurrio un error inesperado, pero no te preocupes puedes intentarlo más tarde.";
+"alert.no.internet" = "Por favor verifica tu conexión a internet e inténtalo nuevamente";
+
