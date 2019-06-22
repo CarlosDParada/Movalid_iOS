@@ -34,7 +34,8 @@ class LoadingViewModel: NSObject {
     
     func requestInitialData(){
         self.isLoading.accept(true)
-        WebServiceManager().getGeners(onCompletion: { geners in
+        WebServiceManager().getGeners(onCompletion: {
+            geners in
             if (geners.genres!.count > 0){
                 for gener in geners.genres! {
                     
@@ -46,6 +47,7 @@ class LoadingViewModel: NSObject {
                 }
                 // Save
                 DataLocal.shared.geners = geners.genres!
+                self.getPopularMovies()
             }
         }) { (error) in
             self.isErrorData.accept(error)

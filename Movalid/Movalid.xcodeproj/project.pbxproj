@@ -16,6 +16,30 @@
 		07313FCC22BECD2300D52B61 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FCB22BECD2300D52B61 /* Connectivity.swift */; };
 		07313FCD22BECD2300D52B61 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FCB22BECD2300D52B61 /* Connectivity.swift */; };
 		07313FCE22BECD2300D52B61 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FCB22BECD2300D52B61 /* Connectivity.swift */; };
+		07313FD222BED7D400D52B61 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07313FD122BED7D400D52B61 /* SearchStoryboard.storyboard */; };
+		07313FD322BED7D400D52B61 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07313FD122BED7D400D52B61 /* SearchStoryboard.storyboard */; };
+		07313FD422BED7D400D52B61 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07313FD122BED7D400D52B61 /* SearchStoryboard.storyboard */; };
+		07313FD622BED7E000D52B61 /* DetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07313FD522BED7E000D52B61 /* DetailStoryboard.storyboard */; };
+		07313FD722BED7E000D52B61 /* DetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07313FD522BED7E000D52B61 /* DetailStoryboard.storyboard */; };
+		07313FD822BED7E000D52B61 /* DetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07313FD522BED7E000D52B61 /* DetailStoryboard.storyboard */; };
+		07313FDB22BEDDFA00D52B61 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FDA22BEDDFA00D52B61 /* CustomButton.swift */; };
+		07313FDC22BEDDFA00D52B61 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FDA22BEDDFA00D52B61 /* CustomButton.swift */; };
+		07313FDD22BEDDFA00D52B61 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FDA22BEDDFA00D52B61 /* CustomButton.swift */; };
+		07313FDF22BEDE7100D52B61 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FDE22BEDE7100D52B61 /* Color.swift */; };
+		07313FE022BEDE7100D52B61 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FDE22BEDE7100D52B61 /* Color.swift */; };
+		07313FE122BEDE7100D52B61 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FDE22BEDE7100D52B61 /* Color.swift */; };
+		07313FE322BEE5AB00D52B61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FE222BEE5AB00D52B61 /* DetailViewController.swift */; };
+		07313FE422BEE5AB00D52B61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FE222BEE5AB00D52B61 /* DetailViewController.swift */; };
+		07313FE522BEE5AB00D52B61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FE222BEE5AB00D52B61 /* DetailViewController.swift */; };
+		07313FE722BEE67700D52B61 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FE622BEE67700D52B61 /* SearchViewController.swift */; };
+		07313FE822BEE67700D52B61 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FE622BEE67700D52B61 /* SearchViewController.swift */; };
+		07313FE922BEE67700D52B61 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FE622BEE67700D52B61 /* SearchViewController.swift */; };
+		07313FEB22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FEA22BEF55300D52B61 /* ContentHomeTableViewCell.swift */; };
+		07313FEC22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FEA22BEF55300D52B61 /* ContentHomeTableViewCell.swift */; };
+		07313FED22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FEA22BEF55300D52B61 /* ContentHomeTableViewCell.swift */; };
+		07313FEF22BEF56D00D52B61 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FEE22BEF56D00D52B61 /* SearchTableViewCell.swift */; };
+		07313FF022BEF56D00D52B61 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FEE22BEF56D00D52B61 /* SearchTableViewCell.swift */; };
+		07313FF122BEF56D00D52B61 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FEE22BEF56D00D52B61 /* SearchTableViewCell.swift */; };
 		07695F9722BDA17E001800E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695F9622BDA17E001800E5 /* AppDelegate.swift */; };
 		07695F9922BDA17E001800E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695F9822BDA17E001800E5 /* HomeViewController.swift */; };
 		07695F9C22BDA17E001800E5 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07695F9A22BDA17E001800E5 /* HomeStoryboard.storyboard */; };
@@ -92,6 +116,14 @@
 		07313FC222BEA7FB00D52B61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		07313FC422BEAD2800D52B61 /* NavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExtension.swift; sourceTree = "<group>"; };
 		07313FCB22BECD2300D52B61 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		07313FD122BED7D400D52B61 /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
+		07313FD522BED7E000D52B61 /* DetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailStoryboard.storyboard; sourceTree = "<group>"; };
+		07313FDA22BEDDFA00D52B61 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		07313FDE22BEDE7100D52B61 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		07313FE222BEE5AB00D52B61 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		07313FE622BEE67700D52B61 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		07313FEA22BEF55300D52B61 /* ContentHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHomeTableViewCell.swift; sourceTree = "<group>"; };
+		07313FEE22BEF56D00D52B61 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		07695F9322BDA17E001800E5 /* Movalid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movalid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07695F9622BDA17E001800E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07695F9822BDA17E001800E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +206,34 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		07313FCF22BED79100D52B61 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				07313FD122BED7D400D52B61 /* SearchStoryboard.storyboard */,
+				07313FE622BEE67700D52B61 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		07313FD022BED7AF00D52B61 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				07313FD522BED7E000D52B61 /* DetailStoryboard.storyboard */,
+				07313FE222BEE5AB00D52B61 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		07313FD922BEDDE900D52B61 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				07313FDA22BEDDFA00D52B61 /* CustomButton.swift */,
+				07313FEA22BEF55300D52B61 /* ContentHomeTableViewCell.swift */,
+				07313FEE22BEF56D00D52B61 /* SearchTableViewCell.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		07695F8A22BDA17E001800E5 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +259,7 @@
 		07695F9522BDA17E001800E5 /* Movalid */ = {
 			isa = PBXGroup;
 			children = (
+				07313FD922BEDDE900D52B61 /* Custom */,
 				07695FEA22BDF477001800E5 /* Handle */,
 				07695FD022BDA74C001800E5 /* Model */,
 				07695FC922BDA298001800E5 /* Utils */,
@@ -239,6 +300,7 @@
 				07695FE422BDE6B6001800E5 /* ResponseExtension.swift */,
 				0769601022BE9BB4001800E5 /* ErrorExtension.swift */,
 				07313FC422BEAD2800D52B61 /* NavigationExtension.swift */,
+				07313FDE22BEDE7100D52B61 /* Color.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -302,6 +364,8 @@
 			children = (
 				0769600622BE93E6001800E5 /* Loading */,
 				07313FC622BEAD8400D52B61 /* Home */,
+				07313FD022BED7AF00D52B61 /* Detail */,
+				07313FCF22BED79100D52B61 /* Search */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -449,9 +513,11 @@
 			files = (
 				07313FC122BEA7FB00D52B61 /* Localizable.strings in Resources */,
 				07695FA422BDA17F001800E5 /* LaunchScreen.storyboard in Resources */,
+				07313FD622BED7E000D52B61 /* DetailStoryboard.storyboard in Resources */,
 				07695FA122BDA17F001800E5 /* Assets.xcassets in Resources */,
 				0769600822BE93FF001800E5 /* LoadingStoryboard.storyboard in Resources */,
 				07695F9C22BDA17E001800E5 /* HomeStoryboard.storyboard in Resources */,
+				07313FD222BED7D400D52B61 /* SearchStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +526,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0769600922BE93FF001800E5 /* LoadingStoryboard.storyboard in Resources */,
+				07313FD322BED7D400D52B61 /* SearchStoryboard.storyboard in Resources */,
+				07313FD722BED7E000D52B61 /* DetailStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +535,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07313FD822BED7E000D52B61 /* DetailStoryboard.storyboard in Resources */,
+				07313FD422BED7D400D52B61 /* SearchStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,19 +642,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07313FE722BEE67700D52B61 /* SearchViewController.swift in Sources */,
 				07695FDC22BDCAE5001800E5 /* ResultSearch.swift in Sources */,
 				07695FF822BE00A9001800E5 /* Gener+CoreDataClass.swift in Sources */,
+				07313FDB22BEDDFA00D52B61 /* CustomButton.swift in Sources */,
 				07695FD222BDB752001800E5 /* Configuration.swift in Sources */,
 				07313FBB22BEA55400D52B61 /* AlertHandler.swift in Sources */,
 				07695FED22BDF494001800E5 /* CoreDataHandler.swift in Sources */,
 				07695F9922BDA17E001800E5 /* HomeViewController.swift in Sources */,
 				0769601422BE9EEB001800E5 /* TextString.swift in Sources */,
 				07695F9F22BDA17E001800E5 /* Movalid.xcdatamodeld in Sources */,
+				07313FE322BEE5AB00D52B61 /* DetailViewController.swift in Sources */,
+				07313FDF22BEDE7100D52B61 /* Color.swift in Sources */,
 				07313FCC22BECD2300D52B61 /* Connectivity.swift in Sources */,
+				07313FEF22BEF56D00D52B61 /* SearchTableViewCell.swift in Sources */,
 				07695FE222BDD297001800E5 /* DataLocal.swift in Sources */,
 				0769600E22BE972A001800E5 /* LoadingViewModel.swift in Sources */,
 				07695FFD22BE077D001800E5 /* CoreDataStack.swift in Sources */,
 				07695FFA22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */,
+				07313FEB22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */,
 				07695FD922BDCA64001800E5 /* GenersGlobal.swift in Sources */,
 				07695FDF22BDCD34001800E5 /* Film.swift in Sources */,
 				0769600B22BE941A001800E5 /* LoadingViewController.swift in Sources */,
@@ -606,14 +682,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				07695FD622BDB81A001800E5 /* Services.swift in Sources */,
+				07313FEC22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */,
 				07695FDA22BDCA64001800E5 /* GenersGlobal.swift in Sources */,
+				07313FE422BEE5AB00D52B61 /* DetailViewController.swift in Sources */,
 				07313FC922BEB42300D52B61 /* NavigationExtension.swift in Sources */,
 				0769600C22BE941A001800E5 /* LoadingViewController.swift in Sources */,
 				0769601522BE9EEB001800E5 /* TextString.swift in Sources */,
+				07313FE022BEDE7100D52B61 /* Color.swift in Sources */,
 				0769600222BE124E001800E5 /* Movalid+CoreDataProperties.swift in Sources */,
+				07313FE822BEE67700D52B61 /* SearchViewController.swift in Sources */,
 				07695FEE22BDF494001800E5 /* CoreDataHandler.swift in Sources */,
 				07695FFB22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */,
 				07695FCF22BDA723001800E5 /* ComunicationManager.swift in Sources */,
+				07313FF022BEF56D00D52B61 /* SearchTableViewCell.swift in Sources */,
 				0769600422BE124E001800E5 /* Movalid+CoreDataClass.swift in Sources */,
 				07695FAF22BDA17F001800E5 /* MovalidTests.swift in Sources */,
 				0769601222BE9BB4001800E5 /* ErrorExtension.swift in Sources */,
@@ -622,6 +703,7 @@
 				07695FE022BDCD34001800E5 /* Film.swift in Sources */,
 				07695FE622BDE6B6001800E5 /* ResponseExtension.swift in Sources */,
 				07695FD322BDB752001800E5 /* Configuration.swift in Sources */,
+				07313FDC22BEDDFA00D52B61 /* CustomButton.swift in Sources */,
 				07695FF922BE00A9001800E5 /* Gener+CoreDataClass.swift in Sources */,
 				07313FCD22BECD2300D52B61 /* Connectivity.swift in Sources */,
 				07695FE322BDD297001800E5 /* DataLocal.swift in Sources */,
@@ -634,8 +716,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07313FF122BEF56D00D52B61 /* SearchTableViewCell.swift in Sources */,
+				07313FED22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */,
+				07313FDD22BEDDFA00D52B61 /* CustomButton.swift in Sources */,
+				07313FE922BEE67700D52B61 /* SearchViewController.swift in Sources */,
 				07695FBA22BDA17F001800E5 /* MovalidUITests.swift in Sources */,
 				07313FC822BEB42200D52B61 /* NavigationExtension.swift in Sources */,
+				07313FE522BEE5AB00D52B61 /* DetailViewController.swift in Sources */,
+				07313FE122BEDE7100D52B61 /* Color.swift in Sources */,
 				07313FCE22BECD2300D52B61 /* Connectivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

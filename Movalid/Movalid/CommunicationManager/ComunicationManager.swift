@@ -15,24 +15,28 @@ class CommunicationManager {
     var manager = SessionManager.default
     func initialization() {
         self.manager = SessionManager.default
-     }
+    }
 }
 
 class WebServiceManager {
-
-    internal func request( url: String, completion: @escaping ( _ data: Data?, _ error: ErrorModel?) -> Void) {
+    
+    internal func request( url: String, completion: @escaping ( _ data: Data?)->Void,
+                           onError:@escaping(ErrorModel) -> Void) {
         let request = URLRequest(url: URL(string: url)!)
         //.validate(statusCode: 200..<300).validate(contentType: ["application/json"])
         CommunicationManager.shared.manager.request(request).validate(statusCode: 200..<300)
-            .responseData { response in
+            .validate { request, response, data in
+                // Custom evaluation closure now includes data (allows you to parse data to dig out error messages if necessary)
+                return .success
+            }.responseData { response in
                 switch response.result {
                 case .success:
                     if let data = response.data {
-                        completion(data, nil)
+                        completion(data)
                     }
                 case .failure(let error):
-                     let httpStatusCode = response.response?.statusCode
-                     completion(nil, ErrorHandle.errorGeneric(by: error, status: httpStatusCode ?? 0))
+                    let httpStatusCode = response.response?.statusCode
+                    onError(ErrorHandle.errorGeneric(by: error, status: httpStatusCode ?? 0))
                     print("Error: " + error.localizedDescription)
                     
                 }
@@ -58,17 +62,17 @@ class WebServiceManager {
     
     func getGeners(onCompletion:@escaping(GenersGlobal)->Void,
                    onError:@escaping(ErrorModel)->Void){
-        request(url: Services.geners) { (data, error) in
+        request(url: Services.geners, completion: { (data) in
             let obj = WebServiceManager().turnToObject(data: data!, type: GenersGlobal.self)
             if(obj != nil){
                 onCompletion(obj!)
-            }else{
-                onError(error!)
             }
+        }) { (error) in
+            onError(error)
         }
     }
     func getPopularMovies(page: Int , onCompletion:@escaping(ResultSearch)->Void,
-                                 onError:@escaping(ErrorModel)->Void){
+                          onError:@escaping(ErrorModel)->Void){
         let requestString = Services.popular + Variable.page + "\(page)"
         requestData(url: requestString) { (response) in
             
@@ -77,10 +81,10 @@ class WebServiceManager {
             print(obj)
             if(obj.isSuccess){
                 obj.flatMap({ popularMoviesObjet in
-                     onCompletion(popularMoviesObjet)
+                    onCompletion(popularMoviesObjet)
                 })
             }else{
-               onError(ErrorHandle.errorGeneric(by: obj.error!, status: -1))
+                onError(ErrorHandle.errorGeneric(by: obj.error!, status: -1))
             }
         }
     }
@@ -88,25 +92,25 @@ class WebServiceManager {
     func getTopRatedMovies(page: Int , onCompletion:@escaping(ResultSearch)->Void,
                            onError:@escaping(ErrorModel)->Void){
         let requestString = Services.topRated + Variable.page + "\(page)"
-        request(url: requestString) { (data, error) in
+        request(url: requestString, completion: { (data) in
             let obj = WebServiceManager().turnToObject(data: data!, type: ResultSearch.self)
             if(obj != nil){
                 onCompletion(obj!)
-            }else{
-                onError(error!)
             }
+        }) { (error) in
+            onError(error)
         }
     }
     func getUpCommingMovies(page: Int , onCompletion:@escaping(ResultSearch)->Void,
-                                   onError:@escaping(ErrorModel)->Void){
+                            onError:@escaping(ErrorModel)->Void){
         let requestString = Services.upcoming + Variable.page + "\(page)"
-        request(url: requestString) { (data, error) in
+        request(url: requestString, completion: { (data) in
             let obj = WebServiceManager().turnToObject(data: data!, type: ResultSearch.self)
             if(obj != nil){
                 onCompletion(obj!)
-            }else{
-                onError(error!)
             }
+        }) { (error) in
+            onError(error)
         }
     }
 }
