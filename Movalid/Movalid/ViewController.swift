@@ -16,11 +16,11 @@ class ViewController: UIViewController {
         let serviceManager : WebServiceManager = WebServiceManager()
         serviceManager.getGeners(onCompletion: { geners in
             for gener in geners.genres! {
+                CoreDataHandler.deleteGeners()
                 CoreDataHandler.saveGeners(singleGen:gener)
                 for genr in CoreDataHandler.getAllGeners() {
-                    print("\(genr.id) - \(genr.name)")
+                    print("\(genr.id ?? 0) - \(genr.name ?? "unkonw")")
                 }
-                
             }
         }) { (Error) in
             //
