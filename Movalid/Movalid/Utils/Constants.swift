@@ -40,9 +40,13 @@ class EndPoint {
     func popular(by typeString:String) -> String {
         return "/"+typeString+"/popular?"
     }
-    /*
-     https:2//api.themoviedb.org/3/movie/popular?api_key=898f39b7b0f0d6bd7acaf0f39472b264&language=en-US&page=1
-     */
+    //https:2//api.themoviedb.org/3/movie/popular?api_key=898f39b7b0f0d6bd7acaf0f39472b264&language=en-US&page=1
+    
+    func video(by typeString:String) -> String {
+        return "/"+typeString+"/videos?"
+    }
+    //https://api.themoviedb.org/3/movie/320288/videos?api_key=898f39b7b0f0d6bd7acaf0f39472b264&language=en-US
+    
     func topRated(by typeString:String) -> String {
         return "/"+typeString+"/top_rated?"
     }

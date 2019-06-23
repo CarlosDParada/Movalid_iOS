@@ -24,6 +24,9 @@ class Services{
     func searching(by type:String) -> String{
         return WebService.urlBase + EndPoint().movieSearch(by: type) + Keys.apiKey + Keys.location
     }
+    func getVideo(by type:String) -> String{
+        return WebService.urlBase + EndPoint().video(by: type) + Keys.apiKey + Keys.location
+    }
 }
 
 struct Keys {

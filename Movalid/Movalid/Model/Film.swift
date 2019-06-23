@@ -28,7 +28,6 @@ class Film: Codable {
         
          var configu = Configuration.shared
         
-        
         self.vote_count = Int(movalid.vote_count)
         self.id = Int(movalid.id)
         self.video = movalid.video

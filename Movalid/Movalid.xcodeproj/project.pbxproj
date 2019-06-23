@@ -45,7 +45,6 @@
 		07313FF522BF01F200D52B61 /* GenersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FF222BF01F200D52B61 /* GenersCollectionViewCell.swift */; };
 		07313FF722BF05FE00D52B61 /* HandleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FF622BF05FE00D52B61 /* HandleData.swift */; };
 		07313FF822BF05FE00D52B61 /* HandleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FF622BF05FE00D52B61 /* HandleData.swift */; };
-		07313FF922BF05FE00D52B61 /* HandleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FF622BF05FE00D52B61 /* HandleData.swift */; };
 		07313FFC22BF1E4000D52B61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFB22BF1E4000D52B61 /* BaseViewController.swift */; };
 		07313FFD22BF1E4000D52B61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFB22BF1E4000D52B61 /* BaseViewController.swift */; };
 		07313FFE22BF1E4000D52B61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFB22BF1E4000D52B61 /* BaseViewController.swift */; };
@@ -92,10 +91,6 @@
 		07695FFB22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FF722BE00A9001800E5 /* Gener+CoreDataProperties.swift */; };
 		07695FFD22BE077D001800E5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FFC22BE077D001800E5 /* CoreDataStack.swift */; };
 		07695FFE22BE077D001800E5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FFC22BE077D001800E5 /* CoreDataStack.swift */; };
-		0769600122BE124E001800E5 /* Movalid+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769600022BE124D001800E5 /* Movalid+CoreDataProperties.swift */; };
-		0769600222BE124E001800E5 /* Movalid+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769600022BE124D001800E5 /* Movalid+CoreDataProperties.swift */; };
-		0769600322BE124E001800E5 /* Movalid+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FFF22BE124D001800E5 /* Movalid+CoreDataClass.swift */; };
-		0769600422BE124E001800E5 /* Movalid+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FFF22BE124D001800E5 /* Movalid+CoreDataClass.swift */; };
 		0769600822BE93FF001800E5 /* LoadingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0769600722BE93FF001800E5 /* LoadingStoryboard.storyboard */; };
 		0769600922BE93FF001800E5 /* LoadingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0769600722BE93FF001800E5 /* LoadingStoryboard.storyboard */; };
 		0769600B22BE941A001800E5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769600A22BE941A001800E5 /* LoadingViewController.swift */; };
@@ -109,6 +104,42 @@
 		6430E8636BDA3C87F42B788E /* Pods_MovalidTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88F3159A89158DDF7C8082D /* Pods_MovalidTests.framework */; };
 		A14EF1831BCDE3BAC54657D7 /* Pods_MovalidUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3414A6A0F1DA5F9D7C96B4FF /* Pods_MovalidUITests.framework */; };
 		B96B6F6BECCDE0C5FE1F98F2 /* Pods_Movalid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6835518EE37AA466E7136B40 /* Pods_Movalid.framework */; };
+		D907BFB022C020B3002E9033 /* VideoSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907BFAF22C020B3002E9033 /* VideoSearch.swift */; };
+		D907BFB222C0245B002E9033 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907BFB122C0245B002E9033 /* DetailViewModel.swift */; };
+		D907BFB322C0245B002E9033 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907BFB122C0245B002E9033 /* DetailViewModel.swift */; };
+		D907BFB422C0245B002E9033 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907BFB122C0245B002E9033 /* DetailViewModel.swift */; };
+		D907BFB522C0289A002E9033 /* Movalid+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934AAE422BFEC46005E32D1 /* Movalid+CoreDataClass.swift */; };
+		D907BFB622C0289C002E9033 /* Movalid+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934AAE522BFEC46005E32D1 /* Movalid+CoreDataProperties.swift */; };
+		D907BFB722C028A1002E9033 /* Movalid+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934AAE422BFEC46005E32D1 /* Movalid+CoreDataClass.swift */; };
+		D907BFB822C028A3002E9033 /* Movalid+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934AAE522BFEC46005E32D1 /* Movalid+CoreDataProperties.swift */; };
+		D907BFB922C028A8002E9033 /* Gener+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FF722BE00A9001800E5 /* Gener+CoreDataProperties.swift */; };
+		D907BFBA22C028AB002E9033 /* Gener+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FF622BE00A9001800E5 /* Gener+CoreDataClass.swift */; };
+		D907BFBB22C028AF002E9033 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FEC22BDF494001800E5 /* CoreDataHandler.swift */; };
+		D907BFBC22C028AF002E9033 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FFC22BE077D001800E5 /* CoreDataStack.swift */; };
+		D907BFBD22C028AF002E9033 /* HandleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FF622BF05FE00D52B61 /* HandleData.swift */; };
+		D907BFBE22C028B6002E9033 /* VideoSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907BFAF22C020B3002E9033 /* VideoSearch.swift */; };
+		D907BFBF22C028B7002E9033 /* DataLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FE122BDD297001800E5 /* DataLocal.swift */; };
+		D907BFC022C028B7002E9033 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FD122BDB752001800E5 /* Configuration.swift */; };
+		D907BFC122C028B7002E9033 /* GenersGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FD822BDCA63001800E5 /* GenersGlobal.swift */; };
+		D907BFC222C028B7002E9033 /* ResultSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FDB22BDCAE5001800E5 /* ResultSearch.swift */; };
+		D907BFC322C028B7002E9033 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FDE22BDCD34001800E5 /* Film.swift */; };
+		D907BFC422C028B7002E9033 /* VideoSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907BFAF22C020B3002E9033 /* VideoSearch.swift */; };
+		D907BFC522C028BB002E9033 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FB822BEA44100D52B61 /* AppConfiguration.swift */; };
+		D907BFC622C028BB002E9033 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FBA22BEA55400D52B61 /* AlertHandler.swift */; };
+		D907BFC722C028BC002E9033 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FCA22BDA31B001800E5 /* Constants.swift */; };
+		D907BFC822C028BC002E9033 /* TextString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769601322BE9EEB001800E5 /* TextString.swift */; };
+		D907BFC922C028BC002E9033 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FB822BEA44100D52B61 /* AppConfiguration.swift */; };
+		D907BFCA22C028BC002E9033 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FBA22BEA55400D52B61 /* AlertHandler.swift */; };
+		D907BFCB22C028BF002E9033 /* ComunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FCD22BDA721001800E5 /* ComunicationManager.swift */; };
+		D907BFCC22C028BF002E9033 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FD422BDB81A001800E5 /* Services.swift */; };
+		D907BFCD22C028C3002E9033 /* ResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695FE422BDE6B6001800E5 /* ResponseExtension.swift */; };
+		D907BFCE22C028C3002E9033 /* ErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769601022BE9BB4001800E5 /* ErrorExtension.swift */; };
+		D907BFCF22C028CF002E9033 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769600A22BE941A001800E5 /* LoadingViewController.swift */; };
+		D907BFD022C028CF002E9033 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769600D22BE972A001800E5 /* LoadingViewModel.swift */; };
+		D907BFD122C028D3002E9033 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695F9822BDA17E001800E5 /* HomeViewController.swift */; };
+		D907BFD222C028D4002E9033 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695F9822BDA17E001800E5 /* HomeViewController.swift */; };
+		D934AAE622BFEC46005E32D1 /* Movalid+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934AAE422BFEC46005E32D1 /* Movalid+CoreDataClass.swift */; };
+		D934AAE722BFEC46005E32D1 /* Movalid+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934AAE522BFEC46005E32D1 /* Movalid+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,8 +206,6 @@
 		07695FF622BE00A9001800E5 /* Gener+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gener+CoreDataClass.swift"; sourceTree = "<group>"; };
 		07695FF722BE00A9001800E5 /* Gener+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gener+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		07695FFC22BE077D001800E5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		07695FFF22BE124D001800E5 /* Movalid+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Movalid+CoreDataClass.swift"; path = "/Users/carlos/Developer/Movalid/iOS/Movalid/Movalid/Handle/Entities/Movalid+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		0769600022BE124D001800E5 /* Movalid+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Movalid+CoreDataProperties.swift"; path = "/Users/carlos/Developer/Movalid/iOS/Movalid/Movalid/Handle/Entities/Movalid+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		0769600722BE93FF001800E5 /* LoadingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingStoryboard.storyboard; sourceTree = "<group>"; };
 		0769600A22BE941A001800E5 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		0769600D22BE972A001800E5 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
@@ -189,6 +218,10 @@
 		74F2C23581D14E6995192170 /* Pods-Movalid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movalid.debug.xcconfig"; path = "Target Support Files/Pods-Movalid/Pods-Movalid.debug.xcconfig"; sourceTree = "<group>"; };
 		B4A6FE8EA1261414CDFF9230 /* Pods-MovalidUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovalidUITests.debug.xcconfig"; path = "Target Support Files/Pods-MovalidUITests/Pods-MovalidUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88F3159A89158DDF7C8082D /* Pods_MovalidTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovalidTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D907BFAF22C020B3002E9033 /* VideoSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSearch.swift; sourceTree = "<group>"; };
+		D907BFB122C0245B002E9033 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		D934AAE422BFEC46005E32D1 /* Movalid+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movalid+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D934AAE522BFEC46005E32D1 /* Movalid+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movalid+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EBCD1D1D077F82D5D7F09182 /* Pods-Movalid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movalid.release.xcconfig"; path = "Target Support Files/Pods-Movalid/Pods-Movalid.release.xcconfig"; sourceTree = "<group>"; };
 		F81C6531D2C2FAC15A4367DB /* Pods-MovalidTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovalidTests.debug.xcconfig"; path = "Target Support Files/Pods-MovalidTests/Pods-MovalidTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +279,7 @@
 			children = (
 				07313FD522BED7E000D52B61 /* DetailStoryboard.storyboard */,
 				07313FE222BEE5AB00D52B61 /* DetailViewController.swift */,
+				D907BFB122C0245B002E9033 /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -370,7 +404,7 @@
 				07695FD822BDCA63001800E5 /* GenersGlobal.swift */,
 				07695FDB22BDCAE5001800E5 /* ResultSearch.swift */,
 				07695FDE22BDCD34001800E5 /* Film.swift */,
-				07313FF622BF05FE00D52B61 /* HandleData.swift */,
+				D907BFAF22C020B3002E9033 /* VideoSearch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,6 +415,7 @@
 				07695FF522BE0084001800E5 /* Entities */,
 				07695FEC22BDF494001800E5 /* CoreDataHandler.swift */,
 				07695FFC22BE077D001800E5 /* CoreDataStack.swift */,
+				07313FF622BF05FE00D52B61 /* HandleData.swift */,
 			);
 			path = Handle;
 			sourceTree = "<group>";
@@ -388,8 +423,8 @@
 		07695FF522BE0084001800E5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				07695FFF22BE124D001800E5 /* Movalid+CoreDataClass.swift */,
-				0769600022BE124D001800E5 /* Movalid+CoreDataProperties.swift */,
+				D934AAE422BFEC46005E32D1 /* Movalid+CoreDataClass.swift */,
+				D934AAE522BFEC46005E32D1 /* Movalid+CoreDataProperties.swift */,
 				07695FF622BE00A9001800E5 /* Gener+CoreDataClass.swift */,
 				07695FF722BE00A9001800E5 /* Gener+CoreDataProperties.swift */,
 			);
@@ -690,18 +725,22 @@
 				07313FBB22BEA55400D52B61 /* AlertHandler.swift in Sources */,
 				07695FED22BDF494001800E5 /* CoreDataHandler.swift in Sources */,
 				07695F9922BDA17E001800E5 /* HomeViewController.swift in Sources */,
+				D934AAE722BFEC46005E32D1 /* Movalid+CoreDataProperties.swift in Sources */,
 				0731400422BF3B0F00D52B61 /* HomeViewModel.swift in Sources */,
 				0769601422BE9EEB001800E5 /* TextString.swift in Sources */,
 				07695F9F22BDA17E001800E5 /* Movalid.xcdatamodeld in Sources */,
 				07313FE322BEE5AB00D52B61 /* DetailViewController.swift in Sources */,
 				07313FDF22BEDE7100D52B61 /* Extension.swift in Sources */,
+				D907BFB022C020B3002E9033 /* VideoSearch.swift in Sources */,
 				07313FCC22BECD2300D52B61 /* Connectivity.swift in Sources */,
 				07313FEF22BEF56D00D52B61 /* SearchTableViewCell.swift in Sources */,
 				07695FE222BDD297001800E5 /* DataLocal.swift in Sources */,
 				07313FF322BF01F200D52B61 /* GenersCollectionViewCell.swift in Sources */,
 				0769600E22BE972A001800E5 /* LoadingViewModel.swift in Sources */,
 				07695FFD22BE077D001800E5 /* CoreDataStack.swift in Sources */,
+				D907BFB222C0245B002E9033 /* DetailViewModel.swift in Sources */,
 				07695FFA22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */,
+				D934AAE622BFEC46005E32D1 /* Movalid+CoreDataClass.swift in Sources */,
 				07313FEB22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */,
 				07695FD922BDCA64001800E5 /* GenersGlobal.swift in Sources */,
 				07695FDF22BDCD34001800E5 /* Film.swift in Sources */,
@@ -712,10 +751,8 @@
 				07313FC522BEAD2800D52B61 /* NavigationExtension.swift in Sources */,
 				07695F9722BDA17E001800E5 /* AppDelegate.swift in Sources */,
 				07695FCE22BDA721001800E5 /* ComunicationManager.swift in Sources */,
-				0769600322BE124E001800E5 /* Movalid+CoreDataClass.swift in Sources */,
 				0731400822BF407E00D52B61 /* BaseViewModel.swift in Sources */,
 				07695FE522BDE6B6001800E5 /* ResponseExtension.swift in Sources */,
-				0769600122BE124E001800E5 /* Movalid+CoreDataProperties.swift in Sources */,
 				0769601122BE9BB4001800E5 /* ErrorExtension.swift in Sources */,
 				07695FCB22BDA31B001800E5 /* Constants.swift in Sources */,
 			);
@@ -733,23 +770,26 @@
 				07313FFD22BF1E4000D52B61 /* BaseViewController.swift in Sources */,
 				07313FC922BEB42300D52B61 /* NavigationExtension.swift in Sources */,
 				0769600C22BE941A001800E5 /* LoadingViewController.swift in Sources */,
+				D907BFB522C0289A002E9033 /* Movalid+CoreDataClass.swift in Sources */,
 				0769601522BE9EEB001800E5 /* TextString.swift in Sources */,
 				07313FE022BEDE7100D52B61 /* Extension.swift in Sources */,
-				0769600222BE124E001800E5 /* Movalid+CoreDataProperties.swift in Sources */,
+				D907BFD222C028D4002E9033 /* HomeViewController.swift in Sources */,
 				07313FE822BEE67700D52B61 /* SearchViewController.swift in Sources */,
 				07695FEE22BDF494001800E5 /* CoreDataHandler.swift in Sources */,
 				07695FFB22BE00A9001800E5 /* Gener+CoreDataProperties.swift in Sources */,
 				07695FCF22BDA723001800E5 /* ComunicationManager.swift in Sources */,
+				D907BFC522C028BB002E9033 /* AppConfiguration.swift in Sources */,
 				07313FF022BEF56D00D52B61 /* SearchTableViewCell.swift in Sources */,
-				0769600422BE124E001800E5 /* Movalid+CoreDataClass.swift in Sources */,
 				07695FAF22BDA17F001800E5 /* MovalidTests.swift in Sources */,
 				0769601222BE9BB4001800E5 /* ErrorExtension.swift in Sources */,
 				0731400922BF407E00D52B61 /* BaseViewModel.swift in Sources */,
 				0731400122BF310C00D52B61 /* SearchViewModel.swift in Sources */,
 				07695FDD22BDCAE5001800E5 /* ResultSearch.swift in Sources */,
 				07695FFE22BE077D001800E5 /* CoreDataStack.swift in Sources */,
+				D907BFB622C0289C002E9033 /* Movalid+CoreDataProperties.swift in Sources */,
 				07695FE022BDCD34001800E5 /* Film.swift in Sources */,
 				07695FE622BDE6B6001800E5 /* ResponseExtension.swift in Sources */,
+				D907BFBE22C028B6002E9033 /* VideoSearch.swift in Sources */,
 				07695FD322BDB752001800E5 /* Configuration.swift in Sources */,
 				07313FDC22BEDDFA00D52B61 /* CustomButton.swift in Sources */,
 				07695FF922BE00A9001800E5 /* Gener+CoreDataClass.swift in Sources */,
@@ -758,6 +798,8 @@
 				07695FCC22BDA31B001800E5 /* Constants.swift in Sources */,
 				07313FF422BF01F200D52B61 /* GenersCollectionViewCell.swift in Sources */,
 				0769600F22BE972A001800E5 /* LoadingViewModel.swift in Sources */,
+				D907BFC622C028BB002E9033 /* AlertHandler.swift in Sources */,
+				D907BFB322C0245B002E9033 /* DetailViewModel.swift in Sources */,
 				07313FF822BF05FE00D52B61 /* HandleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,21 +808,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D907BFBC22C028AF002E9033 /* CoreDataStack.swift in Sources */,
+				D907BFC422C028B7002E9033 /* VideoSearch.swift in Sources */,
 				07313FF522BF01F200D52B61 /* GenersCollectionViewCell.swift in Sources */,
+				D907BFCA22C028BC002E9033 /* AlertHandler.swift in Sources */,
+				D907BFC822C028BC002E9033 /* TextString.swift in Sources */,
+				D907BFBB22C028AF002E9033 /* CoreDataHandler.swift in Sources */,
+				D907BFB922C028A8002E9033 /* Gener+CoreDataProperties.swift in Sources */,
+				D907BFC722C028BC002E9033 /* Constants.swift in Sources */,
+				D907BFBA22C028AB002E9033 /* Gener+CoreDataClass.swift in Sources */,
+				D907BFCF22C028CF002E9033 /* LoadingViewController.swift in Sources */,
 				07313FF122BEF56D00D52B61 /* SearchTableViewCell.swift in Sources */,
-				07313FF922BF05FE00D52B61 /* HandleData.swift in Sources */,
+				D907BFD122C028D3002E9033 /* HomeViewController.swift in Sources */,
+				D907BFC022C028B7002E9033 /* Configuration.swift in Sources */,
 				07313FED22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */,
 				07313FDD22BEDDFA00D52B61 /* CustomButton.swift in Sources */,
+				D907BFCB22C028BF002E9033 /* ComunicationManager.swift in Sources */,
 				0731400222BF310C00D52B61 /* SearchViewModel.swift in Sources */,
 				07313FFE22BF1E4000D52B61 /* BaseViewController.swift in Sources */,
+				D907BFB722C028A1002E9033 /* Movalid+CoreDataClass.swift in Sources */,
+				D907BFCC22C028BF002E9033 /* Services.swift in Sources */,
 				07313FE922BEE67700D52B61 /* SearchViewController.swift in Sources */,
 				07695FBA22BDA17F001800E5 /* MovalidUITests.swift in Sources */,
+				D907BFBD22C028AF002E9033 /* HandleData.swift in Sources */,
 				0731400622BF3B0F00D52B61 /* HomeViewModel.swift in Sources */,
+				D907BFCE22C028C3002E9033 /* ErrorExtension.swift in Sources */,
+				D907BFC922C028BC002E9033 /* AppConfiguration.swift in Sources */,
+				D907BFC322C028B7002E9033 /* Film.swift in Sources */,
 				07313FC822BEB42200D52B61 /* NavigationExtension.swift in Sources */,
 				0731400A22BF407E00D52B61 /* BaseViewModel.swift in Sources */,
+				D907BFCD22C028C3002E9033 /* ResponseExtension.swift in Sources */,
+				D907BFC122C028B7002E9033 /* GenersGlobal.swift in Sources */,
 				07313FE522BEE5AB00D52B61 /* DetailViewController.swift in Sources */,
 				07313FE122BEDE7100D52B61 /* Extension.swift in Sources */,
+				D907BFB422C0245B002E9033 /* DetailViewModel.swift in Sources */,
+				D907BFC222C028B7002E9033 /* ResultSearch.swift in Sources */,
+				D907BFB822C028A3002E9033 /* Movalid+CoreDataProperties.swift in Sources */,
+				D907BFBF22C028B7002E9033 /* DataLocal.swift in Sources */,
 				07313FCE22BECD2300D52B61 /* Connectivity.swift in Sources */,
+				D907BFD022C028CF002E9033 /* LoadingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

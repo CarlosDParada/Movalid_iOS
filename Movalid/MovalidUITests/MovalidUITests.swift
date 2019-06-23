@@ -26,9 +26,19 @@ class MovalidUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func validateFLow(){
+         XCUIApplication().launch()
+        let app = XCUIApplication()
+        let topRatedButton = app/*@START_MENU_TOKEN@*/.buttons["Top Rated"]/*[[".segmentedControls.buttons[\"Top Rated\"]",".buttons[\"Top Rated\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        topRatedButton.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Upcoming"]/*[[".segmentedControls.buttons[\"Upcoming\"]",".buttons[\"Upcoming\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Series"]/*[[".segmentedControls.buttons[\"Series\"]",".buttons[\"Series\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Popular"]/*[[".segmentedControls.buttons[\"Popular\"]",".buttons[\"Popular\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        topRatedButton.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Peliculas"]/*[[".segmentedControls.buttons[\"Peliculas\"]",".buttons[\"Peliculas\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        func testExample() {
+            // Use recording to get started writing UI tests.
+            // Use XCTAssert and related functions to verify your tests produce the correct results.
+        }
     }
-
 }

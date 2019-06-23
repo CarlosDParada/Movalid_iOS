@@ -29,3 +29,6 @@ struct MessageString {
     }
 }
 
+struct  TextString{
+    static let noDataCell = NSLocalizedString("msg.error.nodata", comment: "")
+}

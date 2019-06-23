@@ -33,6 +33,7 @@ extension UICollectionViewCell{
 extension UITableViewCell{
     static let homeCellIdentifier = "homeItemCell"
     static let searchCellIdentifier = "searchItemCell"
+    static let emptyCell = "emptyCell"
 }
 
 

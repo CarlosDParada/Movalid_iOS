@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 
 class BaseViewController: UIViewController {
     
@@ -19,6 +22,7 @@ class BaseViewController: UIViewController {
     var labelLoading : UILabel!
     var textLoading : String!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         /*Loading*/
@@ -26,22 +30,20 @@ class BaseViewController: UIViewController {
         /*Buttons Nav*/
         buildNavButtons()
     }
+    
     func loadParameters() {
         Configuration.shared.initByParamer(by: IntContent.movie, intCategory: IntCategory.popular, lenguage: Lenguage.eng)
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isTranslucent = false
-       
         navigationController?.navigationBar.barTintColor = UIColor.backgroundColor
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.font:               UIFont.mainFontRegular(ofSize:  25),
              NSAttributedString.Key.foregroundColor:    UIColor.lightBlue]
-        
+        self.loadingView.isHidden = true
         /* Current */
         let currentWindows = UIApplication.shared.keyWindow
         currentWindows?.addSubview(self.loadingView)
-        self.loadingView.isHidden = true
-        
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
@@ -105,7 +107,7 @@ class BaseViewController: UIViewController {
     }
     
     func removeNavButton(){
-          self.navigationItem.setRightBarButton(nil, animated: true)
+        self.navigationItem.setRightBarButton(nil, animated: true)
     }
     
     //MARK: - searchPressed

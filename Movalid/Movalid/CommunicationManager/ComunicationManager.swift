@@ -137,4 +137,25 @@ class WebServiceManager {
             }
         }
     }
+    
+    /* GetVideo */
+    func getVideoContent(by type:String, onCompletion:@escaping(VideoSearch)->Void,
+                          onError:@escaping(ErrorModel)->Void){
+        let requestString = Services().getVideo(by: type) 
+        print(">> Request \(requestString)")
+        requestData(url: requestString) { (response) in
+            
+            let decoder = JSONDecoder()
+            let obj: Result<VideoSearch> = decoder.decodeResponse(from: response)
+            print(obj)
+            if(obj.isSuccess){
+                obj.flatMap({ popularMoviesObjet in
+                    //https://www.youtube.com/watch?v=Im4odVLNxqo
+                    onCompletion(popularMoviesObjet)
+                })
+            }else{
+                onError(ErrorHandle.errorGeneric(by: obj.error!, status: -1))
+            }
+        }
+    }
 }

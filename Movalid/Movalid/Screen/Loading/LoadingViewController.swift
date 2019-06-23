@@ -30,6 +30,7 @@ class LoadingViewController: BaseViewController {
         self.viewModel.getInitialData()
         createCallbacks()
     }
+    
     //MARK: - RxSwift
     func createCallbacks (){
         /* Error Response */

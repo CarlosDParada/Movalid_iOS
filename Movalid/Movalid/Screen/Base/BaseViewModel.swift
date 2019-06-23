@@ -66,7 +66,7 @@ class BaseViewModel: NSObject {
         self.isLoading.accept(true)
         WebServiceManager().getPopularMovies(by: type,  page: 1, onCompletion: {
             (filmsPopular) in
-            CoreDataHandler.deleteMovalid(by: Category.popular)
+            CoreDataHandler.deleteMovalid(by:type, category: Category.popular)
             for filmSng in filmsPopular.results! {
                 CoreDataHandler.saveFilm(singleFilm: filmSng, category: Category.popular , type:type)
             }
@@ -105,7 +105,7 @@ class BaseViewModel: NSObject {
         self.isLoading.accept(true)
         WebServiceManager().getTopRatedMovies(by:type,page: 1, onCompletion: {
             (filmsTops) in
-            CoreDataHandler.deleteMovalid(by: Category.topRated)
+            CoreDataHandler.deleteMovalid(by:type, category: Category.topRated)
             for filmSng in filmsTops.results! {
                 CoreDataHandler.saveFilm(singleFilm: filmSng, category: Category.topRated, type:type)
             }
@@ -143,7 +143,7 @@ class BaseViewModel: NSObject {
         self.isLoading.accept(true)
         WebServiceManager().getUpCommingMovies(by:type, page: 1, onCompletion: {
             (filmsTops) in
-            CoreDataHandler.deleteMovalid(by: Category.upcoming)
+            CoreDataHandler.deleteMovalid(by:type, category: Category.upcoming)
             for filmSng in filmsTops.results! {
                 CoreDataHandler.saveFilm(singleFilm: filmSng, category: Category.upcoming, type:type)
             }

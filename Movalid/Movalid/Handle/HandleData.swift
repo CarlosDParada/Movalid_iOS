@@ -55,11 +55,11 @@ class HandlerData {
         let configu = Configuration.shared
         switch configu.intCategory{
         case 1:
-            return DataLocal.shared.serieTop!
+            return DataLocal.shared.serieTop ?? []
         case 2:
-            return DataLocal.shared.serieUpcoming!
+            return DataLocal.shared.serieUpcoming ?? []
         default:
-            return DataLocal.shared.seriePopular!
+            return DataLocal.shared.seriePopular ?? []
         }
     }
     
@@ -73,9 +73,9 @@ class HandlerData {
                 return[]
             }
         case 2:
-            return DataLocal.shared.movieUpcoming!
+            return DataLocal.shared.movieUpcoming ?? []
         default:
-            return DataLocal.shared.moviePopular!
+            return DataLocal.shared.moviePopular ?? []
         }
     }
     

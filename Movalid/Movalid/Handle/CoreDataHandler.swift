@@ -36,7 +36,7 @@ class CoreDataHandler : UIViewController{
         filmSmpl.id = Int32(Int(singleFilm.id!))
         filmSmpl.video = singleFilm.video ?? false
         filmSmpl.title = singleFilm.title ?? ""
-        if (filmSmpl.title == nil) {
+        if (singleFilm.title == nil) {
             filmSmpl.title = singleFilm.name ?? ""
             filmSmpl.name = singleFilm.name ?? ""
         }
@@ -87,10 +87,15 @@ class CoreDataHandler : UIViewController{
         let context = appDelegate!.persistentContainer.viewContext
         var arrayGeners : [Film] = []
         do {
-            let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Film")
-            fetchRequest.predicate = NSPredicate(format: "type contains[c] %@", type )
-            fetchRequest.predicate = NSPredicate(format: "category contains[c] %@", category)
-            let filmsDB = try context.fetch(Movalid.fetchRequest() as NSFetchRequest<Movalid>)
+            let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Movalid")
+            
+            let typeKeyPredicate = NSPredicate(format: "type contains[c] %@", type )
+            let categoryKeyPredicate = NSPredicate(format: "category contains[c] %@", category)
+            let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [typeKeyPredicate, categoryKeyPredicate])
+            fetchRequest.predicate = andPredicate
+            
+            let filmsDB = try context.fetch(fetchRequest) as! [Movalid]
+            
             for data in filmsDB as [NSManagedObject] {
                 let filmLcl : Film = Film.init(by: data as! Movalid , category: category)
                 arrayGeners.append(filmLcl)
@@ -108,13 +113,20 @@ class CoreDataHandler : UIViewController{
         
         var arrayGeners : [Film] = []
         do {
-            let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Film")
-            fetchRequest.predicate = NSPredicate(format: "title contains[c] %@", string)
-            let filmsDB = try context.fetch(fetchRequest as! NSFetchRequest<Movalid>)
+            let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Movalid")
+            
+            let titleKeyPredicate = NSPredicate(format: "title contains[c] %@", string )
+            let categoryKeyPredicate = NSPredicate(format: "category contains[c] %@", category)
+            let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [titleKeyPredicate, categoryKeyPredicate])
+            fetchRequest.predicate = andPredicate
+            
+            let filmsDB = try context.fetch(fetchRequest) as! [Movalid]
+            
             for data in filmsDB as [NSManagedObject] {
                 let filmLcl : Film = Film.init(by: data as! Movalid , category: category)
                 arrayGeners.append(filmLcl)
             }
+            
         } catch {
             print("Failed")
         }
@@ -140,8 +152,8 @@ class CoreDataHandler : UIViewController{
     static func deleteGeners() {
         deleteData(entity: "Gener")
     }
-    static func deleteMovalid(by category:String) {
-        deleteData(entity: "Movalid" ,category: category)
+    static func deleteMovalid(by type:String, category:String ) {
+        deleteData(entity: "Movalid" ,category: category, type:type)
     }
     
     static func deleteData(entity : String) {
@@ -160,12 +172,15 @@ class CoreDataHandler : UIViewController{
             print("Detele all data in \(entity) error :", error)
         }
     }
-    static func deleteData(entity : String , category: String) {
+    static func deleteData(entity : String , category: String, type:String) {
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate!.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        fetchRequest.predicate = NSPredicate(format: "category == %@", category)
+        let typeKeyPredicate = NSPredicate(format: "type contains[c] %@", type )
+        let categoryKeyPredicate = NSPredicate(format: "category contains[c] %@", category)
+        
+        fetchRequest.predicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [typeKeyPredicate, categoryKeyPredicate])
         fetchRequest.returnsObjectsAsFaults = false
         do {
             let results = try managedContext.fetch(fetchRequest)

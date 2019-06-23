@@ -11,13 +11,13 @@ import RxSwift
 import RxCocoa
 
 class HomeViewController: BaseViewController , UITableViewDelegate , UITableViewDataSource{
-
+    
     
     @IBOutlet weak var segmentTypeContent: UISegmentedControl!
     @IBOutlet weak var segmentCategory: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
-     var secondTime: Bool = false
+    var secondTime: Bool = false
     
     /* Rx Swift */
     let viewModel = HomeViewModel()
@@ -26,7 +26,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate , UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
-         self.title = "MOVALID"
+        self.title = "MOVALID"
         loadLocalParameters()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -34,13 +34,13 @@ class HomeViewController: BaseViewController , UITableViewDelegate , UITableView
         createCallbacks()
         buildNavButtons()
     }
-    
     func loadLocalParameters() {
         //FIXME : Revisar
         segmentTypeContent.selectedSegmentIndex = IntContent.movie
         HandlerData.updateTypeContent(by: IntContent.movie)
         segmentCategory.selectedSegmentIndex = IntCategory.popular
         HandlerData.updateCategoryContent(by: IntCategory.popular)
+        tableView.reloadData()
     }
     
     //MARK: - RxSwift
@@ -64,7 +64,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate , UITableView
         viewModel.isSuccessData.asObservable()
             .bind{state in
                 if (state){
-                   self.removeLoadingView()
+                    self.removeLoadingView()
                     self.tableView.reloadData()
                 }
             }.disposed(by: disposeBag)
@@ -81,52 +81,118 @@ class HomeViewController: BaseViewController , UITableViewDelegate , UITableView
             .subscribe(onNext: { index in
                 print(index)
                 if(self.secondTime){
-                HandlerData.updateTypeContent(by: index)
-                self.segmentTypeContent.selectedSegmentIndex = index
-                self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: index),
-                                             category: HandlerData.getCategoryString(by: self.segmentCategory.selectedSegmentIndex))}
+                    self.contentTypeObserver(by: index)
+                    //                    HandlerData.updateTypeContent(by: index)
+                    //                    self.segmentTypeContent.selectedSegmentIndex = index
+                    //                    self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: index),
+                    //                                                 category: HandlerData.getCategoryString(by: self.segmentCategory.selectedSegmentIndex))
+                    
+                }
             })
             .disposed(by: disposeBag)
         segmentCategory.rx.selectedSegmentIndex.asObservable()
             .subscribe(onNext: { index in
-                 if(self.secondTime){
-                print(index)
-                self.segmentCategory.selectedSegmentIndex = index
-                HandlerData.updateCategoryContent(by: index)
-                self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: self.segmentTypeContent.selectedSegmentIndex),
-                                             category: HandlerData.getCategoryString(by: index))}else{
+                if(self.secondTime){
+                    print(index)
+                    self.categoryObserver(by: index)
+                    //                    self.segmentCategory.selectedSegmentIndex = index
+                    //                    HandlerData.updateCategoryContent(by: index)
+                    //                    self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: self.segmentTypeContent.selectedSegmentIndex),
+                    //                                                 category: HandlerData.getCategoryString(by: index))
+                }else{
                     self.secondTime = true
                 }
             })
             .disposed(by: disposeBag)
         
     }
-    
-    
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(">>\(HandlerData.getContentBySituation().count)")
-        return HandlerData.getContentBySituation().count
+    func contentTypeObserver(by index: Int){
+        HandlerData.updateTypeContent(by: index)
+        if (index == 1) {
+            self.segmentCategory.setEnabled(false, forSegmentAt: 2)
+            if (self.segmentCategory.selectedSegmentIndex == 2){
+                self.segmentCategory.selectedSegmentIndex = 0
+                HandlerData.updateCategoryContent(by: 0)
+            }
+            
+            self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: self.segmentTypeContent.selectedSegmentIndex),
+                                         category: HandlerData.getCategoryString(by: self.segmentCategory.selectedSegmentIndex))
+        }else{
+            self.segmentCategory.setEnabled(true, forSegmentAt: 2)
+            self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: index),
+                                         category: HandlerData.getCategoryString(by: self.segmentCategory.selectedSegmentIndex))
+        }
     }
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell : ContentHomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.homeCellIdentifier, for: indexPath) as! ContentHomeTableViewCell
-         print(">>\(HandlerData.getContentBySituation()[indexPath.row])")
-        cell.setupByContent(by: HandlerData.getContentBySituation()[indexPath.row])
-        print(">>\(HandlerData.getContentBySituation()[indexPath.row].title)")
-        return cell
+    func categoryObserver(by index: Int){
+        if (index == 2) {
+            if (self.segmentTypeContent.selectedSegmentIndex == 1) {
+                self.segmentCategory.selectedSegmentIndex = 1
+                HandlerData.updateCategoryContent(by: 1)
+                self.segmentCategory.setEnabled(false, forSegmentAt: 2)
+                
+                self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: self.segmentTypeContent.selectedSegmentIndex),
+                                             category: HandlerData.getCategoryString(by: self.segmentCategory.selectedSegmentIndex))
+                
+            }else{
+                self.segmentCategory.setEnabled(true, forSegmentAt: 2)
+                HandlerData.updateCategoryContent(by: index)
+                self.viewModel.getFindMovies(by:
+                    HandlerData.getTypeContentString(by: self.segmentTypeContent.selectedSegmentIndex),
+                                             category: HandlerData.getCategoryString(by:index))
+            }
+        }else{
+            print(index)
+            HandlerData.updateCategoryContent(by: index)
+            self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: self.segmentTypeContent.selectedSegmentIndex),
+                                         category: HandlerData.getCategoryString(by: index))}
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(">>\(HandlerData.getContentBySituation().count)")
+        if (HandlerData.getContentBySituation().count <= 0) {
+            return 1
+        }else{
+            return HandlerData.getContentBySituation().count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (HandlerData.getContentBySituation().count <= 0) {
+            let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.emptyCell, for: indexPath) 
+            cell.textLabel?.text  = TextString.noDataCell
+            cell.textLabel?.textColor = UIColor.white
+            return cell
+        }else{
+            let cell : ContentHomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.homeCellIdentifier, for: indexPath) as! ContentHomeTableViewCell
+            print(">>\(HandlerData.getContentBySituation()[indexPath.row])")
+            cell.setupByContent(by: HandlerData.getContentBySituation()[indexPath.row])
+            print(">>\(HandlerData.getContentBySituation()[indexPath.row].title)")
+            return cell}
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        if (HandlerData.getContentBySituation().count <= 0) {
+           return 50
+        }else{
+            return 150
+        }
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
+        
         guard let tableViewCell = cell as? ContentHomeTableViewCell else { return }
-
         tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let filmSelected : Film = HandlerData.getContentBySituation()[indexPath.row]
+        let goToVC : UIViewController = ViewControllerExtension.detailViewController(byFilm: filmSelected)
+        self.present(goToVC, animated: true) {
+            self.removeFromParent()
+        }
+    }
+    
 }
 extension HomeViewController :  UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     
@@ -145,7 +211,7 @@ extension HomeViewController :  UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 70, height: 13)
     }
-  
+    
     private func collectionView(collectionView: UICollectionView, didDeselectItemAt indexPath: NSIndexPath) {
         let cellToDeselect:UICollectionViewCell = collectionView.cellForItem(at: indexPath as IndexPath )!
         cellToDeselect.contentView.backgroundColor = UIColor.clear
@@ -155,7 +221,7 @@ extension HomeViewController :  UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 extension HomeViewController {
-   
+    
 }
 
 
