@@ -8,9 +8,10 @@
 
 import Foundation
 
+
 struct WebService {
     static let urlBase    = "https://api.themoviedb.org/3"//3
-    static let urlImage    = "https://image.tmdb.org/t/p/w600_and_h900_bestv2"
+    static let urlImage    = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/"
     /*
      https:2//image.tmdb.org/t/p/w600_and_h900_bestv2/3iYQTLGoy7QnjcUYRJy4YrAgGvp.jpg
      */
@@ -61,10 +62,25 @@ struct Lenguage {
     static let spa = "es-CO"
 }
 
+struct Content {
+    static let movie = "movie"
+    static let tv = "tv"
+}
+struct IntContent {
+    static let movie = 0
+    static let tv = 1
+}
+
 struct Category {
     static let topRated = "topRated"
     static let upcoming = "upcoming"
     static let popular = "popular"
+}
+
+struct IntCategory {
+    static let topRated = 1
+    static let upcoming = 2
+    static let popular = 0
 }
 
 struct ErrorConnection {
@@ -86,3 +102,5 @@ struct ProjectKeys {
 struct MovalidSParams {
     static let errorGeneric             = "errorGeneric"
 }
+
+

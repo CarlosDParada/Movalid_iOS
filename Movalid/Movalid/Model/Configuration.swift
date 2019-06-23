@@ -9,7 +9,13 @@
 import Foundation
 class Configuration {
     static var shared = Configuration()
-    var type : String = "movie"
-    var lenguage : String = "en-US"
+    
+    var type : String = Content.movie
+    var inType : Int = IntContent.movie
+    
+    var category : String = Category.popular
+    var intCategory : Int = IntCategory.popular
+    
+    var lenguage : String = Lenguage.eng
     
 }

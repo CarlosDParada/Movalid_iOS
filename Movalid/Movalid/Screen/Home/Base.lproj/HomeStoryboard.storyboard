@@ -76,7 +76,7 @@
                                 <rect key="frame" x="0.0" y="145" width="375" height="522"/>
                                 <color key="backgroundColor" red="0.1134650484" green="0.1134078577" blue="0.15320816640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="fTy-Tu-dEc" customClass="ContentHomeTableViewCell" customModule="Movalid" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeItemCell" rowHeight="120" id="fTy-Tu-dEc" customClass="ContentHomeTableViewCell" customModule="Movalid" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fTy-Tu-dEc" id="JgG-Nc-DMf">
@@ -109,7 +109,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="generCell" id="aqE-VA-uqD">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCollentItemCell" id="aqE-VA-uqD" customClass="GenersCollectionViewCell" customModule="Movalid" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="1" width="60" height="20"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -144,6 +144,9 @@
                                                                         <constraint firstItem="IVr-39-NJ6" firstAttribute="top" secondItem="aqE-VA-uqD" secondAttribute="top" constant="2" id="wGE-sS-Bmv"/>
                                                                     </constraints>
                                                                     <size key="customSize" width="60" height="20"/>
+                                                                    <connections>
+                                                                        <outlet property="btnGener" destination="IVr-39-NJ6" id="kXq-n8-Yhc"/>
+                                                                    </connections>
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>
@@ -210,6 +213,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="H62-FJ-CGa"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KBE-Pn-uVW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.1134650484" green="0.1134078577" blue="0.15320816640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
