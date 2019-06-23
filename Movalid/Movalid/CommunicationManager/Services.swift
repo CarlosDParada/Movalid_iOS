@@ -8,18 +8,25 @@
 
 import Foundation
 
-struct Services {
-    static let geners =
-        WebService.urlBase + EndPoint.geners + Keys.apiKey + Keys.location
-    
-    static let popular = WebService.urlBase + EndPoint.popular + Keys.apiKey + Keys.location
-    
-     static let topRated = WebService.urlBase + EndPoint.topRated + Keys.apiKey + Keys.location
-    
-    static let upcoming = WebService.urlBase + EndPoint.upcoming + Keys.apiKey + Keys.location
+class Services{
+    func geners(by type:String) -> String{
+        return WebService.urlBase + EndPoint().geners(by: type) + Keys.apiKey + Keys.location
+    }
+    func popular(by type:String) -> String{
+        return WebService.urlBase + EndPoint().popular(by: type) + Keys.apiKey + Keys.location
+    }
+    func topRated(by type:String) -> String{
+        return WebService.urlBase + EndPoint().topRated(by: type) + Keys.apiKey + Keys.location
+    }
+    func upcoming(by type:String) -> String{
+        return WebService.urlBase + EndPoint().upcoming(by: type) + Keys.apiKey + Keys.location
+    }
+    func searching(by type:String) -> String{
+        return WebService.urlBase + EndPoint().movieSearch(by: type) + Keys.apiKey + Keys.location
+    }
 }
 
 struct Keys {
-    static let apiKey = Variable.apiKey + ProjectKeys.apiKey
-    static let location = Variable.lenguage +  Configuration.shared.lenguage
+    static let apiKey = Variable().apiKey + ProjectKeys.apiKey
+    static let location = Variable().lenguage +  "en-US" 
 }

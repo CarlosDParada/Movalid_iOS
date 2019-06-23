@@ -60,9 +60,10 @@ class WebServiceManager {
         }
     }
     
-    func getGeners(onCompletion:@escaping(GenersGlobal)->Void,
+    func getGeners(by type:String, onCompletion:@escaping(GenersGlobal)->Void,
                    onError:@escaping(ErrorModel)->Void){
-        request(url: Services.geners, completion: { (data) in
+        
+        request(url: Services().geners(by: type), completion: { (data) in
             let obj = WebServiceManager().turnToObject(data: data!, type: GenersGlobal.self)
             if(obj != nil){
                 onCompletion(obj!)
@@ -71,9 +72,10 @@ class WebServiceManager {
             onError(error)
         }
     }
-    func getPopularMovies(page: Int , onCompletion:@escaping(ResultSearch)->Void,
+    func getPopularMovies(by type:String, page: Int , onCompletion:@escaping(ResultSearch)->Void,
                           onError:@escaping(ErrorModel)->Void){
-        let requestString = Services.popular + Variable.page + "\(page)"
+        let requestString = Services().popular(by: type) + Variable().page + "\(page)"
+        print(">> Request \(requestString)")
         requestData(url: requestString) { (response) in
             
             let decoder = JSONDecoder()
@@ -89,9 +91,10 @@ class WebServiceManager {
         }
     }
     
-    func getTopRatedMovies(page: Int , onCompletion:@escaping(ResultSearch)->Void,
+    func getTopRatedMovies(by type:String, page: Int , onCompletion:@escaping(ResultSearch)->Void,
                            onError:@escaping(ErrorModel)->Void){
-        let requestString = Services.topRated + Variable.page + "\(page)"
+        let requestString = Services().topRated(by: type) + Variable().page + "\(page)"
+        print(">> Request \(requestString)")
         request(url: requestString, completion: { (data) in
             let obj = WebServiceManager().turnToObject(data: data!, type: ResultSearch.self)
             if(obj != nil){
@@ -101,9 +104,10 @@ class WebServiceManager {
             onError(error)
         }
     }
-    func getUpCommingMovies(page: Int , onCompletion:@escaping(ResultSearch)->Void,
+    func getUpCommingMovies(by type:String,page: Int , onCompletion:@escaping(ResultSearch)->Void,
                             onError:@escaping(ErrorModel)->Void){
-        let requestString = Services.upcoming + Variable.page + "\(page)"
+        let requestString = Services().upcoming(by: type) + Variable().page + "\(page)"
+        print(">> Request \(requestString)")
         request(url: requestString, completion: { (data) in
             let obj = WebServiceManager().turnToObject(data: data!, type: ResultSearch.self)
             if(obj != nil){
@@ -116,17 +120,17 @@ class WebServiceManager {
     
     /*      Search Movies
      */
-    func getSearchMovies(category:String, keyString:String, page: Int , onCompletion:@escaping(ResultSearch)->Void,
+    func getSearchMovies(by type:String, category:String, keyString:String, page: Int , onCompletion:@escaping(ResultSearch)->Void,
                           onError:@escaping(ErrorModel)->Void){
-        let requestString = Services.popular + Variable.page + "\(page)"
+        let requestString = Services().searching(by: type) + Variable().page + "\(page)" + Variable().query + "\(keyString)"
         requestData(url: requestString) { (response) in
             
             let decoder = JSONDecoder()
             let obj: Result<ResultSearch> = decoder.decodeResponse(from: response)
             print(obj)
             if(obj.isSuccess){
-                obj.flatMap({ popularMoviesObjet in
-                    onCompletion(popularMoviesObjet)
+                obj.flatMap({ searchMoviesObjet in
+                    onCompletion(searchMoviesObjet)
                 })
             }else{
                 onError(ErrorHandle.errorGeneric(by: obj.error!, status: -1))

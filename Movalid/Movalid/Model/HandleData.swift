@@ -9,39 +9,41 @@
 import Foundation
 
 class HandlerData {
-    
     static func updateTypeContent(by code:Int){
+        let configu = Configuration.shared
         switch code {
         case IntContent.tv:
-            Configuration.shared.type = Content.tv
-            Configuration.shared.inType = IntContent.tv
+            configu.type = Content.tv
+            configu.inType = IntContent.tv
             break
         default:
-            Configuration.shared.type = Content.movie
-            Configuration.shared.inType = IntContent.movie
+            configu.type = Content.movie
+            configu.inType = IntContent.movie
         }
     }
     
     static func updateCategoryContent(by code:Int){
+        let configu = Configuration.shared
         switch code {
         case IntCategory.topRated:
-            Configuration.shared.category = Category.topRated
-            Configuration.shared.intCategory = IntCategory.topRated
+            configu.category = Category.topRated
+            configu.intCategory = IntCategory.topRated
             break
         case IntCategory.upcoming:
-            Configuration.shared.category = Category.upcoming
-            Configuration.shared.intCategory = IntCategory.upcoming
+            configu.category = Category.upcoming
+            configu.intCategory = IntCategory.upcoming
             break
         default:
-            Configuration.shared.category = Category.popular
-            Configuration.shared.intCategory = IntCategory.popular
+            configu.category = Category.popular
+            configu.intCategory = IntCategory.popular
         }
     }
-
+    
     
     static func getContentBySituation () -> [Film]{
+        let configu = Configuration.shared
         
-        switch Configuration.shared.type {
+        switch configu.type {
         case "tv":
             return getSerieSimple()
         default:
@@ -50,7 +52,8 @@ class HandlerData {
     }
     
     static func getSerieSimple() -> [Film] {
-        switch Configuration.shared.intCategory{
+        let configu = Configuration.shared
+        switch configu.intCategory{
         case 1:
             return DataLocal.shared.serieTop!
         case 2:
@@ -61,9 +64,14 @@ class HandlerData {
     }
     
     static func getMovieSimple() -> [Film] {
-        switch Configuration.shared.intCategory{
+        let configu = Configuration.shared
+        switch configu.intCategory{
         case 1:
-            return DataLocal.shared.movieTop!
+            if(DataLocal.shared.movieTop!.count > 0){
+                return DataLocal.shared.movieTop!
+            }else{
+                return[]
+            }
         case 2:
             return DataLocal.shared.movieUpcoming!
         default:
@@ -72,9 +80,10 @@ class HandlerData {
     }
     
     
-     static func getContentBySituation (indexPath: IndexPath) -> Film{
+    static func getContentBySituation (indexPath: IndexPath) -> Film{
+        let configu = Configuration.shared
         
-        switch Configuration.shared.type {
+        switch configu.type {
         case "tv":
             return getSerieSimple(indexPath: indexPath)
         default:
@@ -82,8 +91,9 @@ class HandlerData {
         }
     }
     
-     static func getSerieSimple(indexPath : IndexPath) -> Film {
-        switch  Configuration.shared.intCategory{
+    static func getSerieSimple(indexPath : IndexPath) -> Film {
+        let configu = Configuration.shared
+        switch  configu.intCategory{
         case 1:
             return DataLocal.shared.serieTop![indexPath.row]
         case 2:
@@ -93,8 +103,9 @@ class HandlerData {
         }
     }
     
-     static func getMovieSimple(indexPath : IndexPath) -> Film {
-        switch  Configuration.shared.intCategory{
+    static func getMovieSimple(indexPath : IndexPath) -> Film {
+        let configu = Configuration.shared
+        switch  configu.intCategory{
         case 1:
             return DataLocal.shared.movieTop![indexPath.row]
         case 2:
@@ -109,7 +120,27 @@ class HandlerData {
         if let gener = array!.first(where: {$0.id == idGen}) {
             return gener.name
         } else {
-             return "Unkown"
+            return "Unkown"
+        }
+    }
+    
+    static func getTypeContentString(by key:Int) -> String{
+        switch key {
+        case IntContent.tv:
+            return Content.tv
+        default:
+            return Content.movie
+        }
+    }
+    
+    static func getCategoryString(by key:Int) -> String{
+        switch key {
+        case IntCategory.topRated:
+            return Category.topRated
+        case IntCategory.upcoming:
+            return Category.upcoming
+        default:
+            return Category.popular
         }
     }
     

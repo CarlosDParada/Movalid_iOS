@@ -8,14 +8,18 @@
 
 import Foundation
 class Configuration {
-    static var shared = Configuration()
+    static let shared:Configuration = Configuration()
+    var type : String?
+    var inType : Int?
+    var category : String?
+    var intCategory : Int?
+    var lenguage : String?
     
-    var type : String = Content.movie
-    var inType : Int = IntContent.movie
-    
-    var category : String = Category.popular
-    var intCategory : Int = IntCategory.popular
-    
-    var lenguage : String = Lenguage.eng
-    
+    func initByParamer(by intType : Int , intCategory: Int , lenguage : String) {
+        self.inType = intType
+        self.intCategory = intCategory
+        self.lenguage = lenguage
+        self.type = HandlerData.getCategoryString(by: intCategory)
+        self.category = HandlerData.getCategoryString(by: intCategory)
+    }
 }

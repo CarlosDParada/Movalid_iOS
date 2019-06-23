@@ -10,51 +10,64 @@ import Foundation
 
 
 struct WebService {
+    let configu = Configuration.shared
+    
     static let urlBase    = "https://api.themoviedb.org/3"//3
     static let urlImage    = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/"
     /*
      https:2//image.tmdb.org/t/p/w600_and_h900_bestv2/3iYQTLGoy7QnjcUYRJy4YrAgGvp.jpg
      */
 }
-struct EndPoint {
-    static let geners = "/genre/"+Variable.type+"/list?"
+class EndPoint {
+    func geners(by typeString:String) -> String {
+       return "/genre/"+typeString+"/list?"
+    }
     /*
      https:2//api.themoviedb.org/3/genre/movie/list?api_key=898f39b7b0f0d6bd7acaf0f39472b264&language=es-CO
      */
-    
-    static let movieSearch = "/search/"+Variable.type+"?"
+    func movieSearch(by typeString:String) -> String {
+        return "/search/"+typeString+"?"
+    }
     /*
      https:2//api.themoviedb.org/3/search/movie?api_key=898f39b7b0f0d6bd7acaf0f39472b264&language=es-CO&query=Iron
      */
-    
-    static let movieDetail = "/"+Variable.type+"/"
+    func movieDetail(by typeString:String) -> String {
+        return "/"+typeString+"/"
+    }
     /*
      https:3//api.themoviedb.org/3/movie/1726?api_key=898f39b7b0f0d6bd7acaf0f39472b264&language=en-US
      */
-    
-    static let popular = "/"+Variable.type+"/popular?"
+    func popular(by typeString:String) -> String {
+        return "/"+typeString+"/popular?"
+    }
     /*
      https:2//api.themoviedb.org/3/movie/popular?api_key=898f39b7b0f0d6bd7acaf0f39472b264&language=en-US&page=1
      */
-    
-    static let topRated = "/"+Variable.type+"/top_rated?"
+    func topRated(by typeString:String) -> String {
+        return "/"+typeString+"/top_rated?"
+    }
     /*
      https:2//api.themoviedb.org/3/movie/top_rated?api_key=898f39b7b0f0d6bd7acaf0f39472b264&language=en-US&page=1
      */
-    
-    static let upcoming = "/"+Variable.type+"/upcoming?"
+    func upcoming(by typeString:String) -> String {
+        return "/"+typeString+"/upcoming?"
+    }
     /*
      https:2//api.themoviedb.org/3/movie/upcoming?api_key=898f39b7b0f0d6bd7acaf0f39472b264&language=en-US&page=1
      */
-
+    
 }
 
-struct Variable {
-    static let type = Configuration.shared.type
-    static let apiKey = "api_key="
-    static let lenguage = "&language="
-    static let page = "&page="
-    static let query = "&query="
+class Variable {
+     let apiKey = "api_key="
+     let lenguage = "&language="
+     let page = "&page="
+     let query = "&query="
+    
+    func typeR() -> String {
+         let  type = Configuration.shared
+        return type.type ?? Content.movie
+    }
 }
 
 struct Lenguage {

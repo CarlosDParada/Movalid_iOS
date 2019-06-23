@@ -24,11 +24,11 @@ class LoadingViewController: BaseViewController {
         super.viewDidLoad()
         lblVersion.text = MessageString.wait
         lblMessage.text = MessageString.versionLoading
-        createCallbacks()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewModel.getInitialData()
+        createCallbacks()
     }
     //MARK: - RxSwift
     func createCallbacks (){
@@ -62,6 +62,8 @@ class LoadingViewController: BaseViewController {
                 self.removeLoadingView()
             }
             }.disposed(by: disposeBag)
+        
+        
     }
     
     

@@ -52,6 +52,12 @@
 		0731400022BF310C00D52B61 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFF22BF310C00D52B61 /* SearchViewModel.swift */; };
 		0731400122BF310C00D52B61 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFF22BF310C00D52B61 /* SearchViewModel.swift */; };
 		0731400222BF310C00D52B61 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFF22BF310C00D52B61 /* SearchViewModel.swift */; };
+		0731400422BF3B0F00D52B61 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731400322BF3B0F00D52B61 /* HomeViewModel.swift */; };
+		0731400522BF3B0F00D52B61 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731400322BF3B0F00D52B61 /* HomeViewModel.swift */; };
+		0731400622BF3B0F00D52B61 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731400322BF3B0F00D52B61 /* HomeViewModel.swift */; };
+		0731400822BF407E00D52B61 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731400722BF407E00D52B61 /* BaseViewModel.swift */; };
+		0731400922BF407E00D52B61 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731400722BF407E00D52B61 /* BaseViewModel.swift */; };
+		0731400A22BF407E00D52B61 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731400722BF407E00D52B61 /* BaseViewModel.swift */; };
 		07695F9722BDA17E001800E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695F9622BDA17E001800E5 /* AppDelegate.swift */; };
 		07695F9922BDA17E001800E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695F9822BDA17E001800E5 /* HomeViewController.swift */; };
 		07695F9C22BDA17E001800E5 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07695F9A22BDA17E001800E5 /* HomeStoryboard.storyboard */; };
@@ -140,6 +146,8 @@
 		07313FF622BF05FE00D52B61 /* HandleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleData.swift; sourceTree = "<group>"; };
 		07313FFB22BF1E4000D52B61 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		07313FFF22BF310C00D52B61 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		0731400322BF3B0F00D52B61 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0731400722BF407E00D52B61 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		07695F9322BDA17E001800E5 /* Movalid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movalid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07695F9622BDA17E001800E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07695F9822BDA17E001800E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +224,7 @@
 		07313FC622BEAD8400D52B61 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0731400322BF3B0F00D52B61 /* HomeViewModel.swift */,
 				07695F9822BDA17E001800E5 /* HomeViewController.swift */,
 				07695F9A22BDA17E001800E5 /* HomeStoryboard.storyboard */,
 			);
@@ -256,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				07313FFB22BF1E4000D52B61 /* BaseViewController.swift */,
+				0731400722BF407E00D52B61 /* BaseViewModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -680,6 +690,7 @@
 				07313FBB22BEA55400D52B61 /* AlertHandler.swift in Sources */,
 				07695FED22BDF494001800E5 /* CoreDataHandler.swift in Sources */,
 				07695F9922BDA17E001800E5 /* HomeViewController.swift in Sources */,
+				0731400422BF3B0F00D52B61 /* HomeViewModel.swift in Sources */,
 				0769601422BE9EEB001800E5 /* TextString.swift in Sources */,
 				07695F9F22BDA17E001800E5 /* Movalid.xcdatamodeld in Sources */,
 				07313FE322BEE5AB00D52B61 /* DetailViewController.swift in Sources */,
@@ -702,6 +713,7 @@
 				07695F9722BDA17E001800E5 /* AppDelegate.swift in Sources */,
 				07695FCE22BDA721001800E5 /* ComunicationManager.swift in Sources */,
 				0769600322BE124E001800E5 /* Movalid+CoreDataClass.swift in Sources */,
+				0731400822BF407E00D52B61 /* BaseViewModel.swift in Sources */,
 				07695FE522BDE6B6001800E5 /* ResponseExtension.swift in Sources */,
 				0769600122BE124E001800E5 /* Movalid+CoreDataProperties.swift in Sources */,
 				0769601122BE9BB4001800E5 /* ErrorExtension.swift in Sources */,
@@ -714,6 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07695FD622BDB81A001800E5 /* Services.swift in Sources */,
+				0731400522BF3B0F00D52B61 /* HomeViewModel.swift in Sources */,
 				07313FEC22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */,
 				07695FDA22BDCA64001800E5 /* GenersGlobal.swift in Sources */,
 				07313FE422BEE5AB00D52B61 /* DetailViewController.swift in Sources */,
@@ -731,6 +744,7 @@
 				0769600422BE124E001800E5 /* Movalid+CoreDataClass.swift in Sources */,
 				07695FAF22BDA17F001800E5 /* MovalidTests.swift in Sources */,
 				0769601222BE9BB4001800E5 /* ErrorExtension.swift in Sources */,
+				0731400922BF407E00D52B61 /* BaseViewModel.swift in Sources */,
 				0731400122BF310C00D52B61 /* SearchViewModel.swift in Sources */,
 				07695FDD22BDCAE5001800E5 /* ResultSearch.swift in Sources */,
 				07695FFE22BE077D001800E5 /* CoreDataStack.swift in Sources */,
@@ -761,7 +775,9 @@
 				07313FFE22BF1E4000D52B61 /* BaseViewController.swift in Sources */,
 				07313FE922BEE67700D52B61 /* SearchViewController.swift in Sources */,
 				07695FBA22BDA17F001800E5 /* MovalidUITests.swift in Sources */,
+				0731400622BF3B0F00D52B61 /* HomeViewModel.swift in Sources */,
 				07313FC822BEB42200D52B61 /* NavigationExtension.swift in Sources */,
+				0731400A22BF407E00D52B61 /* BaseViewModel.swift in Sources */,
 				07313FE522BEE5AB00D52B61 /* DetailViewController.swift in Sources */,
 				07313FE122BEDE7100D52B61 /* Extension.swift in Sources */,
 				07313FCE22BECD2300D52B61 /* Connectivity.swift in Sources */,

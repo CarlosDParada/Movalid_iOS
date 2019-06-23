@@ -26,7 +26,9 @@ class BaseViewController: UIViewController {
         /*Buttons Nav*/
         buildNavButtons()
     }
-    
+    func loadParameters() {
+        Configuration.shared.initByParamer(by: IntContent.movie, intCategory: IntCategory.popular, lenguage: Lenguage.eng)
+    }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isTranslucent = false
        
@@ -100,6 +102,10 @@ class BaseViewController: UIViewController {
         self.btnSearch.addTarget(self, action: #selector(self.searchPressed), for: .touchUpInside)
         let itemSalir = UIBarButtonItem.init(customView: self.btnSearch)
         self.navigationItem.setRightBarButton(itemSalir, animated: true)
+    }
+    
+    func removeNavButton(){
+          self.navigationItem.setRightBarButton(nil, animated: true)
     }
     
     //MARK: - searchPressed

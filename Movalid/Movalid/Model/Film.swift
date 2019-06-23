@@ -22,12 +22,21 @@ class Film: Codable {
     var release_date : String?
     var category : String?
     var type : String?
+    var name : String?
     
     init(by movalid : Movalid , category : String) {
+        
+         var configu = Configuration.shared
+        
+        
         self.vote_count = Int(movalid.vote_count)
         self.id = Int(movalid.id)
         self.video = movalid.video
         self.title = movalid.title ?? ""
+        if (movalid.title == nil){
+            self.title = movalid.name ?? ""
+            self.name = movalid.name ?? ""
+        }
         self.poster_path = movalid.poster_path ?? ""
         self.original_language = movalid.original_language ?? ""
         self.original_title = movalid.original_title ?? ""
@@ -36,6 +45,6 @@ class Film: Codable {
         self.overview = movalid.overview ?? ""
         self.release_date = movalid.release_date ?? ""
         self.category = category
-        self.type = Configuration.shared.type
+        self.type = configu.type
     }
 }

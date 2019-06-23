@@ -21,37 +21,49 @@ class SearchViewModel: NSObject {
     let isLoading = BehaviorRelay<Bool>(value: false)
     
     override init() {
-        print("Loading View Model")
         CommunicationManager.shared.initialization()
     }
-    func getSearchMovies(by category:String, key: String) {
+    func getSearchMovies(by type: String, category:String, key: String) {
         if !Connectivity.isConnectedToInternet() {
-            DataLocal.shared.search =
-                CoreDataHandler.getAllMovalid(by: category, string: key)
-            if(DataLocal.shared.moviePopular!.count > 0){
-                self.isSuccessData.accept(DataLocal.shared.search!)
+            if(type == Content.tv){
+                DataLocal.shared.serieSearch = CoreDataHandler.getAllMovalid(by: category ,type: type)
+                if(DataLocal.shared.serieSearch!.count > 0){
+                    self.isSuccessData.accept(DataLocal.shared.serieSearch!)
+                }else{
+                    self.isErrorData.accept(ErrorHandle.errorGeneric(by: NSLocalizedString("alert.no.internet", comment: "Check connection"), status: ErrorConnection.requestTimeOut))
+                }
             }else{
-                self.isErrorData.accept(ErrorHandle.errorGeneric(by: NSLocalizedString("alert.no.internet", comment: "Check connection"), status: ErrorConnection.requestTimeOut))
+                DataLocal.shared.movieSearch = CoreDataHandler.getAllMovalid(by: category ,type: type)
+                if(DataLocal.shared.movieSearch!.count > 0){
+                    self.isSuccessData.accept(DataLocal.shared.movieSearch!)
+                }else{
+                    self.isErrorData.accept(ErrorHandle.errorGeneric(by: NSLocalizedString("alert.no.internet", comment: "Check connection"), status: ErrorConnection.requestTimeOut))
+                }
             }
         }else{
-            requestSearchMovies(by:category, key: key)
+            requestSearchMovies(by: type , category:category, key: key)
         }
     }
     
-    func requestSearchMovies(by category:String, key: String){
-        self.isLoading.accept(true)
-        WebServiceManager().getPopularMovies(page: 1, onCompletion: {
-            (filmsPopular) in
-            for filmSng in filmsPopular.results! {
-                CoreDataHandler.deleteMovalid(by: Category.popular)
-                CoreDataHandler.saveFilm(singleFilm: filmSng, category: Category.popular)
-                for film in CoreDataHandler.getAllMovalid(by: Category.popular) {
-                    print("\(film.id ?? 0) - \(film.title ?? "unkonw")")
-                }
-            }
+    func requestSearchMovies(by type:String , category:String, key: String){
+        self.isLoading.accept(true)        
+        WebServiceManager().getSearchMovies(by:type, category: category, keyString: key, page: 1, onCompletion: { (searchFilms) in
+            
             // Save
-            DataLocal.shared.moviePopular = filmsPopular.results!
-            self.isSuccessData.accept(true)
+            if ( searchFilms.results!.count > 0 ){
+                for filmSng in searchFilms.results! {
+                    CoreDataHandler.saveFilm(singleFilm: filmSng, category: category, type:type)
+                }
+                if(type == Content.tv){
+                    DataLocal.shared.serieSearch = searchFilms.results!
+                }else{
+                    DataLocal.shared.movieSearch = searchFilms.results!
+                }
+                self.isSuccessData.accept(searchFilms.results!)
+            }else{
+                self.isErrorData.accept(ErrorHandle.errorGeneric(by: NSLocalizedString("alert.no.internet", comment: "Check connection"), status: ErrorConnection.requestTimeOut))
+            }
+            
         }) { (error) in
             self.isErrorData.accept(error )
         }

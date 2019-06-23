@@ -9,6 +9,7 @@
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genre_ids" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="original_language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="original_title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="overview" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,6 +22,6 @@
     </entity>
     <elements>
         <element name="Gener" positionX="-36" positionY="9" width="128" height="73"/>
-        <element name="Movalid" positionX="0" positionY="63" width="128" height="240"/>
+        <element name="Movalid" positionX="0" positionY="63" width="128" height="255"/>
     </elements>
 </model>

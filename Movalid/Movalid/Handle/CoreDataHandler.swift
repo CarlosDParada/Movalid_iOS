@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class CoreDataHandler : UIViewController{
+    
+    
     static func saveGeners(singleGen : StandarModel)  {
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate!.persistentContainer.viewContext
@@ -26,21 +28,24 @@ class CoreDataHandler : UIViewController{
         }
     }
     
-    static func saveFilm(singleFilm : Film , category:String)  {
+    static func saveFilm(singleFilm : Film , category:String , type:String)  {
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate!.persistentContainer.viewContext
-        
         let filmSmpl = Movalid(context: managedContext)
         filmSmpl.vote_count = Int32(Int(singleFilm.vote_count!))
         filmSmpl.id = Int32(Int(singleFilm.id!))
-        filmSmpl.video = singleFilm.video!
-        filmSmpl.title = singleFilm.title!
-        filmSmpl.type = Configuration.shared.type
-        filmSmpl.poster_path = singleFilm.poster_path!
-        filmSmpl.original_language = singleFilm.original_language!
-        filmSmpl.original_title = singleFilm.original_title!
+        filmSmpl.video = singleFilm.video ?? false
+        filmSmpl.title = singleFilm.title ?? ""
+        if (filmSmpl.title == nil) {
+            filmSmpl.title = singleFilm.name ?? ""
+            filmSmpl.name = singleFilm.name ?? ""
+        }
+        filmSmpl.type = type
+        filmSmpl.poster_path = singleFilm.poster_path  ?? ""
+        filmSmpl.original_language = singleFilm.original_language  ?? ""
+        filmSmpl.original_title = singleFilm.original_title  ?? ""
         filmSmpl.genre_ids = singleFilm.genre_ids! as [NSNumber]
-        filmSmpl.backdrop_path = singleFilm.backdrop_path!
+        filmSmpl.backdrop_path = singleFilm.backdrop_path  ?? ""
         filmSmpl.overview = singleFilm.overview
         filmSmpl.release_date = singleFilm.release_date
         filmSmpl.category = category
@@ -76,13 +81,15 @@ class CoreDataHandler : UIViewController{
     }
     
     
-    static func getAllMovalid(by category: String) -> [Film]{
+    static func getAllMovalid(by category: String, type : String) -> [Film]{
         
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegate!.persistentContainer.viewContext
-        
         var arrayGeners : [Film] = []
         do {
+            let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Film")
+            fetchRequest.predicate = NSPredicate(format: "type contains[c] %@", type )
+            fetchRequest.predicate = NSPredicate(format: "category contains[c] %@", category)
             let filmsDB = try context.fetch(Movalid.fetchRequest() as NSFetchRequest<Movalid>)
             for data in filmsDB as [NSManagedObject] {
                 let filmLcl : Film = Film.init(by: data as! Movalid , category: category)

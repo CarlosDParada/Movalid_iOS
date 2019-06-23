@@ -10,8 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchViewController: UIViewController {
-
+class SearchViewController: BaseViewController {
+    
     @IBOutlet weak var btnGoBack: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -23,19 +23,42 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        removeNavButton()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        createCallbacks()
+        
+    }
+    //MARK: - RxSwift
+    func createCallbacks (){
+        viewModel.isErrorData.asObservable()
+            .bind{ errorModel in
+                if (errorModel.codeError != ErrorConnection.none ){
+                    let messageAlert = MessageString.setupTextAlertLoading(by: errorModel)
+                    let alertError : UIAlertController  =
+                        UIAlertController.actionShowOneAction(by: "", message: messageAlert, button: MessageString.tryAgain) {_ in
+                            self.viewModel.getInitialData()
+                    }
+                    self.present(alertError, animated: true, completion: nil)
+                }else{
+                    print("Success in \(errorModel.serviceName ?? "Empty")")
+                }
+            }.disposed(by: disposeBag)
+        
+        viewModel.isLoading.asObservable().bind { value in
+            if value {
+                self.showLoadignView()
+            }else{
+                self.removeLoadingView()
+            }
+            }.disposed(by: disposeBag)
+        
+        btnGoBack.rx.tap
+            .bind{
+                self.dismiss(animated: true, completion: nil)
+            }.disposed(by: disposeBag)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

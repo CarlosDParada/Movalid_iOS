@@ -17,5 +17,6 @@ class DataLocal {
     var seriePopular : [Film]?
     var serieUpcoming : [Film]?
     var geners : [StandarModel]?
-    var search : [Film]?
+    var serieSearch : [Film]?
+    var movieSearch : [Film]?
 }

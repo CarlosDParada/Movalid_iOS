@@ -20,6 +20,7 @@ extension Movalid {
     @NSManaged public var id: Int32
     @NSManaged public var video: Bool
     @NSManaged public var title: String?
+    @NSManaged public var name: String?
     @NSManaged public var type: String?
     @NSManaged public var poster_path: String?
     @NSManaged public var original_language: String?

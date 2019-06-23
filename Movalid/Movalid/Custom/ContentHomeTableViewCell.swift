@@ -19,7 +19,11 @@ class ContentHomeTableViewCell: UITableViewCell  {
     
     func setupByContent(by item: Film) {
         self.imgContent.cacheImage(urlString: WebService.urlImage + item.poster_path!)
-        self.lblTitle.text = item.title
+        if (item.title == nil) {
+            self.lblTitle.text = item.name
+        }else{
+            self.lblTitle.text = item.title
+        }
         self.lblDate.text = item.release_date
         self.lblSumary.text = item.overview
     }
