@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LoadingViewController: UIViewController {
+class LoadingViewController: BaseViewController {
     
     @IBOutlet weak var lblVersion: UILabel!
     @IBOutlet weak var lblMessage: UILabel!
@@ -25,6 +25,9 @@ class LoadingViewController: UIViewController {
         lblVersion.text = MessageString.wait
         lblMessage.text = MessageString.versionLoading
         createCallbacks()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.viewModel.getInitialData()
     }
     //MARK: - RxSwift
@@ -54,20 +57,18 @@ class LoadingViewController: UIViewController {
         
         viewModel.isLoading.asObservable().bind { value in
             if value {
-                self.activityIndicatorLoading.isHidden = false
-                self.activityIndicatorLoading.startAnimating()
+                self.showLoadignView()
             }else{
-                self.activityIndicatorLoading.stopAnimating()
-                self.activityIndicatorLoading.isHidden = true
+                self.removeLoadingView()
             }
             }.disposed(by: disposeBag)
     }
     
     
     func showInitialScreen() {
-        let goTOVC : UINavigationController = NavigationExtension.homeViewController()
+        let goTOVC : UINavigationController = NavigationExtension.homeViewController()
         self.present(goTOVC, animated: true) {
-                        self.removeFromParent()
+            self.removeFromParent()
         }
     }
 }

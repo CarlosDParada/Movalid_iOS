@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="0mb-tn-hPz">
             <objects>
-                <viewController storyboardIdentifier="search" id="aM3-kq-Qsd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="search" id="aM3-kq-Qsd" customClass="SearchViewController" customModule="Movalid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ndX-Wz-T85">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
                                 <color key="backgroundColor" red="0.1134650484" green="0.1134078577" blue="0.15320816640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.1134650484" green="0.1134078577" blue="0.15320816640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchItemCell" rowHeight="80" id="wjB-9l-sBH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchItemCell" rowHeight="80" id="wjB-9l-sBH" customClass="SearchTableViewCell" customModule="Movalid" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wjB-9l-sBH" id="RLq-sE-XwA">
@@ -119,6 +119,11 @@
                                                 <constraint firstItem="l7X-pS-IDn" firstAttribute="centerY" secondItem="gEQ-3N-CYH" secondAttribute="centerY" id="uCT-u1-sM7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgFilm" destination="gEQ-3N-CYH" id="r2a-Qw-Zn5"/>
+                                            <outlet property="lblDate" destination="cNI-uZ-W4i" id="lmt-MS-6fY"/>
+                                            <outlet property="lblTitle" destination="l7X-pS-IDn" id="mSs-XT-QF0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -135,10 +140,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oo7-FU-iM4"/>
                     </view>
+                    <connections>
+                        <outlet property="btnGoBack" destination="2O5-ME-cvn" id="3DC-0l-BBc"/>
+                        <outlet property="searchBar" destination="RhI-GD-K1d" id="v9V-o7-qnl"/>
+                        <outlet property="tableView" destination="s0z-sY-X6A" id="lI3-cK-H3s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k8-bD-4GJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="495.6521739130435" y="-353.57142857142856"/>
+            <point key="canvasLocation" x="497" y="-455"/>
         </scene>
     </scenes>
     <resources>

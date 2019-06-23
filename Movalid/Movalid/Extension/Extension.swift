@@ -18,6 +18,10 @@ extension UIColor {
     static var borderColorBtn = UIColor(red: 0/255.0,
                                         green: 122.0/255.0,
                                         blue: 1.0, alpha: 0)
+    
+    static var lightBlue = UIColor.init(red: 91.0/255.0, green: 121.0/255.0, blue: 245.0/255.0, alpha: 1)
+    
+      static var backgroundColor = UIColor.init(red: 29.0/255.0, green: 29.0/255.0, blue: 39.0/255.0, alpha: 1)
 }
 
 
@@ -63,5 +67,33 @@ extension UIImageView {
                 }
             }
             }.resume()
+    }
+}
+
+
+extension UIFont {
+    private static func customFont(name: String, size: CGFloat) -> UIFont {
+        let font = UIFont(name: name, size: size)
+        assert(font != nil, "Can't load font: \(name)")
+        return font ?? UIFont.systemFont(ofSize: size)
+    }
+    
+    static func mainFontRegular(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "Symbol", size: size)
+    }
+}
+
+extension UIImage {
+    private static func customImage(name: String) -> UIImage {
+        let image = UIImage(named: name)
+        assert(image != nil, "Can't load font: \(name)")
+        return image ?? UIImage.init()
+    }
+    
+    static func navLogo () -> UIImage {
+        return customImage(name: "logo-top")
+    }
+    static func navSearchIcon () -> UIImage {
+        return customImage(name: "search")
     }
 }

@@ -10,9 +10,14 @@ import UIKit
 
 class GenersCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var btnGener: UIButton!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var viewNormal: UIView!
     
     func setupByContent(by item: Int) {
-        self.btnGener.setTitle(HandlerData.getGenerById(by: item), for: .normal)
+        lblTitle.layer.cornerRadius = 1
+        lblTitle.layer.borderWidth = 1
+        lblTitle.layer.borderColor = UIColor.lightBlue.cgColor
+        
+        self.lblTitle.text = HandlerData.getGenerById(by: item)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
+class HomeViewController: BaseViewController , UITableViewDelegate , UITableViewDataSource{
 
     
     @IBOutlet weak var segmentTypeContent: UISegmentedControl!
@@ -19,7 +19,9 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       tableView.delegate = self
+        tableView.delegate = self
+         self.title = "MOVALID"
+       buildNavButtons()
         
     }
     func LoadParameters() {
@@ -45,39 +47,43 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+
         guard let tableViewCell = cell as? ContentHomeTableViewCell else { return }
-        
+
         tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
     }
 
 }
-extension HomeViewController :  UICollectionViewDelegate, UICollectionViewDataSource{
+extension HomeViewController :  UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return HandlerData.getContentBySituation()[collectionView.tag].genre_ids!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : GenersCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.homeCollectIdentifier, for: indexPath) as! GenersCollectionViewCell
-        var generSingle = HandlerData.getContentBySituation()[collectionView.tag].genre_ids![indexPath.row]
+        let cell : GenersCollectionViewCell =
+            collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.homeCollectIdentifier,
+                                               for: indexPath) as! GenersCollectionViewCell
+        let generSingle = HandlerData.getContentBySituation()[collectionView.tag].genre_ids![indexPath.row]
         cell.setupByContent(by: generSingle)
         return cell
     }
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 70, height: 13)
+    }
+  
+    private func collectionView(collectionView: UICollectionView, didDeselectItemAt indexPath: NSIndexPath) {
+        let cellToDeselect:UICollectionViewCell = collectionView.cellForItem(at: indexPath as IndexPath )!
+        cellToDeselect.contentView.backgroundColor = UIColor.clear
+    }
     
     
 }
-/**
- extension UICollectionViewCell{
- static let homeCollectIdentifier = "homeCollentItemCell"
- static let detailCollectIdentifier = "detailCollentItemCel"
- }
- 
- extension UITableViewCell{
- static let homeCellIdentifier = "homeItemCell"
- static let searchCellIdentifier = "searchItemCell"
- }
- 
- */
+
+extension HomeViewController {
+    
+}

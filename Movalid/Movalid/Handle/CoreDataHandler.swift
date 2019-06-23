@@ -94,6 +94,25 @@ class CoreDataHandler : UIViewController{
         return arrayGeners
     }
     
+    static func getAllMovalid(by category: String, string:String) -> [Film]{
+        
+        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+        let context = appDelegate!.persistentContainer.viewContext
+        
+        var arrayGeners : [Film] = []
+        do {
+            let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Film")
+            fetchRequest.predicate = NSPredicate(format: "title contains[c] %@", string)
+            let filmsDB = try context.fetch(fetchRequest as! NSFetchRequest<Movalid>)
+            for data in filmsDB as [NSManagedObject] {
+                let filmLcl : Film = Film.init(by: data as! Movalid , category: category)
+                arrayGeners.append(filmLcl)
+            }
+        } catch {
+            print("Failed")
+        }
+        return arrayGeners
+    }
     
     
     static func findGeners(byId: Int32) -> [Gener]{

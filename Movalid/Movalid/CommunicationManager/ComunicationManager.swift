@@ -113,4 +113,24 @@ class WebServiceManager {
             onError(error)
         }
     }
+    
+    /*      Search Movies
+     */
+    func getSearchMovies(category:String, keyString:String, page: Int , onCompletion:@escaping(ResultSearch)->Void,
+                          onError:@escaping(ErrorModel)->Void){
+        let requestString = Services.popular + Variable.page + "\(page)"
+        requestData(url: requestString) { (response) in
+            
+            let decoder = JSONDecoder()
+            let obj: Result<ResultSearch> = decoder.decodeResponse(from: response)
+            print(obj)
+            if(obj.isSuccess){
+                obj.flatMap({ popularMoviesObjet in
+                    onCompletion(popularMoviesObjet)
+                })
+            }else{
+                onError(ErrorHandle.errorGeneric(by: obj.error!, status: -1))
+            }
+        }
+    }
 }

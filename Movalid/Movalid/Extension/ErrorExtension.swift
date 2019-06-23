@@ -37,6 +37,12 @@ class ErrorHandle {
                                codeError: status)
         
     }
+    static func errorGeneric(by message: String , status : Int) -> ErrorModel{
+        return ErrorModel.init(serviceName:  MovalidSParams.errorGeneric,
+                               message: message ,
+                               codeError: status)
+        
+    }
     
     static func errorResponseToObject(from response: DataResponse<Data> , errorData: Error?) throws -> ErrorModel{
         if errorData != nil {

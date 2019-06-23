@@ -58,7 +58,11 @@ class LoadingViewModel: NSObject {
     func getPopularMovies() {
         if !Connectivity.isConnectedToInternet() {
             DataLocal.shared.moviePopular = CoreDataHandler.getAllMovalid(by: Category.popular)
-            self.isSuccessData.accept(true)
+            if(DataLocal.shared.moviePopular!.count > 0){
+                self.isSuccessData.accept(true)
+            }else{
+                 self.isErrorData.accept(ErrorHandle.errorGeneric(by: NSLocalizedString("alert.no.internet", comment: "Check connection"), status: ErrorConnection.requestTimeOut))
+            }
         }else{
             requestPopularMovies()
         }

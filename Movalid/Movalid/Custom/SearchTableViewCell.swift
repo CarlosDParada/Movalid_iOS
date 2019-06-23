@@ -9,16 +9,15 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var imgFilm: UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
+    
+    func setupByContent(by item: Film) {
+        self.imgFilm.cacheImage(urlString: WebService.urlImage + item.poster_path!)
+        self.lblTitle.text = item.title
+        self.lblDate.text = item.release_date
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }

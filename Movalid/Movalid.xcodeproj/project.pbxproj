@@ -46,6 +46,12 @@
 		07313FF722BF05FE00D52B61 /* HandleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FF622BF05FE00D52B61 /* HandleData.swift */; };
 		07313FF822BF05FE00D52B61 /* HandleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FF622BF05FE00D52B61 /* HandleData.swift */; };
 		07313FF922BF05FE00D52B61 /* HandleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FF622BF05FE00D52B61 /* HandleData.swift */; };
+		07313FFC22BF1E4000D52B61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFB22BF1E4000D52B61 /* BaseViewController.swift */; };
+		07313FFD22BF1E4000D52B61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFB22BF1E4000D52B61 /* BaseViewController.swift */; };
+		07313FFE22BF1E4000D52B61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFB22BF1E4000D52B61 /* BaseViewController.swift */; };
+		0731400022BF310C00D52B61 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFF22BF310C00D52B61 /* SearchViewModel.swift */; };
+		0731400122BF310C00D52B61 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFF22BF310C00D52B61 /* SearchViewModel.swift */; };
+		0731400222BF310C00D52B61 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07313FFF22BF310C00D52B61 /* SearchViewModel.swift */; };
 		07695F9722BDA17E001800E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695F9622BDA17E001800E5 /* AppDelegate.swift */; };
 		07695F9922BDA17E001800E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695F9822BDA17E001800E5 /* HomeViewController.swift */; };
 		07695F9C22BDA17E001800E5 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07695F9A22BDA17E001800E5 /* HomeStoryboard.storyboard */; };
@@ -132,6 +138,8 @@
 		07313FEE22BEF56D00D52B61 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		07313FF222BF01F200D52B61 /* GenersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenersCollectionViewCell.swift; sourceTree = "<group>"; };
 		07313FF622BF05FE00D52B61 /* HandleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleData.swift; sourceTree = "<group>"; };
+		07313FFB22BF1E4000D52B61 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		07313FFF22BF310C00D52B61 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		07695F9322BDA17E001800E5 /* Movalid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movalid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07695F9622BDA17E001800E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07695F9822BDA17E001800E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +227,7 @@
 			children = (
 				07313FD122BED7D400D52B61 /* SearchStoryboard.storyboard */,
 				07313FE622BEE67700D52B61 /* SearchViewController.swift */,
+				07313FFF22BF310C00D52B61 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -241,6 +250,14 @@
 				07313FEE22BEF56D00D52B61 /* SearchTableViewCell.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		07313FFA22BF1E2C00D52B61 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				07313FFB22BF1E4000D52B61 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		07695F8A22BDA17E001800E5 = {
@@ -372,6 +389,7 @@
 		0769600522BE93D4001800E5 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				07313FFA22BF1E2C00D52B61 /* Base */,
 				0769600622BE93E6001800E5 /* Loading */,
 				07313FC622BEAD8400D52B61 /* Home */,
 				07313FD022BED7AF00D52B61 /* Detail */,
@@ -657,6 +675,8 @@
 				07695FF822BE00A9001800E5 /* Gener+CoreDataClass.swift in Sources */,
 				07313FDB22BEDDFA00D52B61 /* CustomButton.swift in Sources */,
 				07695FD222BDB752001800E5 /* Configuration.swift in Sources */,
+				07313FFC22BF1E4000D52B61 /* BaseViewController.swift in Sources */,
+				0731400022BF310C00D52B61 /* SearchViewModel.swift in Sources */,
 				07313FBB22BEA55400D52B61 /* AlertHandler.swift in Sources */,
 				07695FED22BDF494001800E5 /* CoreDataHandler.swift in Sources */,
 				07695F9922BDA17E001800E5 /* HomeViewController.swift in Sources */,
@@ -697,6 +717,7 @@
 				07313FEC22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */,
 				07695FDA22BDCA64001800E5 /* GenersGlobal.swift in Sources */,
 				07313FE422BEE5AB00D52B61 /* DetailViewController.swift in Sources */,
+				07313FFD22BF1E4000D52B61 /* BaseViewController.swift in Sources */,
 				07313FC922BEB42300D52B61 /* NavigationExtension.swift in Sources */,
 				0769600C22BE941A001800E5 /* LoadingViewController.swift in Sources */,
 				0769601522BE9EEB001800E5 /* TextString.swift in Sources */,
@@ -710,6 +731,7 @@
 				0769600422BE124E001800E5 /* Movalid+CoreDataClass.swift in Sources */,
 				07695FAF22BDA17F001800E5 /* MovalidTests.swift in Sources */,
 				0769601222BE9BB4001800E5 /* ErrorExtension.swift in Sources */,
+				0731400122BF310C00D52B61 /* SearchViewModel.swift in Sources */,
 				07695FDD22BDCAE5001800E5 /* ResultSearch.swift in Sources */,
 				07695FFE22BE077D001800E5 /* CoreDataStack.swift in Sources */,
 				07695FE022BDCD34001800E5 /* Film.swift in Sources */,
@@ -735,6 +757,8 @@
 				07313FF922BF05FE00D52B61 /* HandleData.swift in Sources */,
 				07313FED22BEF55300D52B61 /* ContentHomeTableViewCell.swift in Sources */,
 				07313FDD22BEDDFA00D52B61 /* CustomButton.swift in Sources */,
+				0731400222BF310C00D52B61 /* SearchViewModel.swift in Sources */,
+				07313FFE22BF1E4000D52B61 /* BaseViewController.swift in Sources */,
 				07313FE922BEE67700D52B61 /* SearchViewController.swift in Sources */,
 				07695FBA22BDA17F001800E5 /* MovalidUITests.swift in Sources */,
 				07313FC822BEB42200D52B61 /* NavigationExtension.swift in Sources */,
@@ -911,13 +935,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HS4NUSTS6K;
+				DEVELOPMENT_TEAM = 69X2QW4Q3B;
 				INFOPLIST_FILE = Movalid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = carlosdparada.Movalid;
+				PRODUCT_BUNDLE_IDENTIFIER = com.valid.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -930,13 +954,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HS4NUSTS6K;
+				DEVELOPMENT_TEAM = 69X2QW4Q3B;
 				INFOPLIST_FILE = Movalid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = carlosdparada.Movalid;
+				PRODUCT_BUNDLE_IDENTIFIER = com.valid.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

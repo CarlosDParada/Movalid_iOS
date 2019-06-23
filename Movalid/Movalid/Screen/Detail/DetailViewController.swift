@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: BaseViewController {
 
     @IBOutlet weak var imgGeneral: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
