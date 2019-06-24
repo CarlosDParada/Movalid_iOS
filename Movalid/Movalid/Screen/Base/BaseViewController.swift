@@ -112,7 +112,7 @@ class BaseViewController: UIViewController {
     
     //MARK: - searchPressed
     @objc func searchPressed (){
-        let goTOVC : UINavigationController = NavigationExtension.searchViewController()
+        let goTOVC : UIViewController = ViewControllerExtension.searchViewController()
         self.present(goTOVC, animated: true) { }
     }
 }

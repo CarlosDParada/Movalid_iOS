@@ -15,6 +15,7 @@ class SearchViewController: BaseViewController  {
     @IBOutlet weak var btnGoBack: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var whiteView: UIView!
+    @IBOutlet weak var segmentType: UISegmentedControl!
     
     
     var filteredContent : [Film]?
@@ -26,14 +27,17 @@ class SearchViewController: BaseViewController  {
     let disposeBag = DisposeBag()
     let contents: BehaviorRelay<[Film]> = BehaviorRelay(value: [])
     
+    var typeContent: BehaviorRelay<String> = BehaviorRelay(value: "movie")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         removeNavButton()
         setUpSearchBar()
         tableView.frame = self.whiteView.frame
         view.addSubview(tableView)
-//        tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchItemCell")
         tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "searchItemCell")
+        tableView.backgroundColor = UIColor.backgroundColor
+        tableView.allowsSelection = false
     }
     
     private func setUpSearchBar() {
@@ -66,24 +70,14 @@ class SearchViewController: BaseViewController  {
         
         viewModel.isSuccessData.asObservable()
             .subscribe( onNext: { filSearch in
-                print(filSearch)
                 if(filSearch.count > 0){
                     self.contents.accept(filSearch)
                 }})
             .disposed(by: disposeBag)
-        
-//        contents.bind(to: tableView.rx.items(cellIdentifier : "searchItemCell")) {
-//            row, model, cell in
-//            cell.textLabel?.text = "\(model.title!), \(model.release_date!)"
-//            cell.textLabel?.numberOfLines = 0
-//            cell.selectionStyle = .none
-//            }.disposed(by: disposeBag)
-        
         contents.bind(to: tableView.rx.items) { (tableView, row, element) in
             let indexPath = IndexPath(row: row, section: 0)
             let cell = tableView.dequeueReusableCell(withIdentifier: "searchItemCell", for: indexPath) as! SearchTableViewCell
-
-            cell.setupByContent(by: element)
+            cell.setupByContent(by: element, byType: self.typeContent.value)
             return cell
             }
             .disposed(by: disposeBag)
@@ -92,32 +86,27 @@ class SearchViewController: BaseViewController  {
         tableView.rx.modelSelected(Film.self)
             .map {$0.title }
             .subscribe(onNext: { title in
-                // Alert with advertis
-                print(title ?? " - ")
             }).disposed(by: disposeBag)
+        
+        segmentType.rx.selectedSegmentIndex.asObservable()
+            .subscribe(onNext: { index in
+                self.typeContent.accept(HandlerData.getTypeContentString(by: index))
+            }).disposed(by: disposeBag)
+        
+        typeContent.subscribe(onNext: { text in
+            self.searchBar.text = ""
+        }).disposed(by: disposeBag)
     }
 }
-
-//extension SearchViewController : UITableViewDelegate , UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return filteredContent?.count ?? 0
-//    }
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
-//        return cell
-//    }
-//}
 
 extension SearchViewController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let whitespaceSet = NSCharacterSet.whitespaces
-        let range = searchText.rangeOfCharacter(from: whitespaceSet)
-        
         if let _ =  searchText.rangeOfCharacter(from: whitespaceSet) {
             self.searchBar.text = ""
         }
         else {
-            viewModel.getSearchMovies(by: "movie" , category: "movie", key: searchText)
+            viewModel.getSearchMovies(by: typeContent.value , category: typeContent.value, key: searchText)
         }
     }
 }

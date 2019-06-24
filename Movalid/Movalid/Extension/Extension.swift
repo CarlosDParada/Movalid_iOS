@@ -81,7 +81,6 @@ extension UIImageView {
             self.image = imageFromCache
             return
         }
-        print(">> \(urlString)")
         URLSession.shared.dataTask(with: url!) {
             data, response, error in
             if let response = data {

@@ -49,8 +49,6 @@ class SearchViewModel: NSObject {
     func requestSearchMovies(by type:String , category:String, key: String){
         self.isLoading.accept(true)        
         WebServiceManager().getSearchMovies(by:type, category: category, keyString: key, page: 1, onCompletion: { (searchFilms) in
-            
-            // Save
             if ( searchFilms.results!.count > 0 ){
                 for filmSng in searchFilms.results! {
                     CoreDataHandler.saveFilm(singleFilm: filmSng, category: category, type:type)

@@ -79,26 +79,15 @@ class HomeViewController: BaseViewController , UITableViewDelegate , UITableView
         
         segmentTypeContent.rx.selectedSegmentIndex.asObservable()
             .subscribe(onNext: { index in
-                print(index)
                 if(self.secondTime){
-                    self.contentTypeObserver(by: index)
-                    //                    HandlerData.updateTypeContent(by: index)
-                    //                    self.segmentTypeContent.selectedSegmentIndex = index
-                    //                    self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: index),
-                    //                                                 category: HandlerData.getCategoryString(by: self.segmentCategory.selectedSegmentIndex))
-                    
+                self.contentTypeObserver(by: index)
                 }
             })
             .disposed(by: disposeBag)
         segmentCategory.rx.selectedSegmentIndex.asObservable()
             .subscribe(onNext: { index in
                 if(self.secondTime){
-                    print(index)
                     self.categoryObserver(by: index)
-                    //                    self.segmentCategory.selectedSegmentIndex = index
-                    //                    HandlerData.updateCategoryContent(by: index)
-                    //                    self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: self.segmentTypeContent.selectedSegmentIndex),
-                    //                                                 category: HandlerData.getCategoryString(by: index))
                 }else{
                     self.secondTime = true
                 }
@@ -142,7 +131,6 @@ class HomeViewController: BaseViewController , UITableViewDelegate , UITableView
                                              category: HandlerData.getCategoryString(by:index))
             }
         }else{
-            print(index)
             HandlerData.updateCategoryContent(by: index)
             self.viewModel.getFindMovies(by: HandlerData.getTypeContentString(by: self.segmentTypeContent.selectedSegmentIndex),
                                          category: HandlerData.getCategoryString(by: index))}
@@ -150,7 +138,6 @@ class HomeViewController: BaseViewController , UITableViewDelegate , UITableView
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(">>\(HandlerData.getContentBySituation().count)")
         if (HandlerData.getContentBySituation().count <= 0) {
             return 1
         }else{
@@ -166,9 +153,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate , UITableView
             return cell
         }else{
             let cell : ContentHomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.homeCellIdentifier, for: indexPath) as! ContentHomeTableViewCell
-            print(">>\(HandlerData.getContentBySituation()[indexPath.row])")
             cell.setupByContent(by: HandlerData.getContentBySituation()[indexPath.row])
-            print(">>\(HandlerData.getContentBySituation()[indexPath.row].title)")
             return cell}
     }
     

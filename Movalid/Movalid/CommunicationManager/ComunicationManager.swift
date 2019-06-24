@@ -20,6 +20,12 @@ class CommunicationManager {
 
 class WebServiceManager {
     
+    /// General request
+    ///
+    /// - Parameters:
+    ///   - url: string with url
+    ///   - completion: escaping of success
+    ///   - onError: escaping of error
     internal func request( url: String, completion: @escaping ( _ data: Data?)->Void,
                            onError:@escaping(ErrorModel) -> Void) {
         let request = URLRequest(url: URL(string: url)!)
@@ -43,6 +49,11 @@ class WebServiceManager {
         }
     }
     
+    /// Request for especific URL and escaping
+    ///
+    /// - Parameters:
+    ///   - url: string with url/endpoint
+    ///   - completion: Data escaping of success
     internal func requestData( url: String, completion: @escaping ( _ response: DataResponse<Data>) -> Void) {
         let request = URLRequest(url: URL(string: url)!)
         CommunicationManager.shared.manager
@@ -60,6 +71,12 @@ class WebServiceManager {
         }
     }
     
+    /// Return Geners in ThemovieDB
+    ///
+    /// - Parameters:
+    ///   - type: movie/tv
+    ///   - completion: escaping of success
+    ///   - onError: escaping of error
     func getGeners(by type:String, onCompletion:@escaping(GenersGlobal)->Void,
                    onError:@escaping(ErrorModel)->Void){
         
@@ -72,10 +89,16 @@ class WebServiceManager {
             onError(error)
         }
     }
+    /// Return Popular movie/serie in ThemovieDB
+    ///
+    /// - Parameters:
+    ///   - type: movie/serie
+    ///   - page: for pagination
+    ///   - onCompletion: escaping of success
+    ///   - onError: escaping of error
     func getPopularMovies(by type:String, page: Int , onCompletion:@escaping(ResultSearch)->Void,
                           onError:@escaping(ErrorModel)->Void){
         let requestString = Services().popular(by: type) + Variable().page + "\(page)"
-        print(">> Request \(requestString)")
         requestData(url: requestString) { (response) in
             
             let decoder = JSONDecoder()
@@ -91,10 +114,16 @@ class WebServiceManager {
         }
     }
     
+    /// Return Top Rated movie/serie in ThemovieDB
+    ///
+    /// - Parameters:
+    ///   - type: movie/serie
+    ///   - page: for pagination
+    ///   - onCompletion: escaping of success
+    ///   - onError: escaping of error
     func getTopRatedMovies(by type:String, page: Int , onCompletion:@escaping(ResultSearch)->Void,
                            onError:@escaping(ErrorModel)->Void){
         let requestString = Services().topRated(by: type) + Variable().page + "\(page)"
-        print(">> Request \(requestString)")
         request(url: requestString, completion: { (data) in
             let obj = WebServiceManager().turnToObject(data: data!, type: ResultSearch.self)
             if(obj != nil){
@@ -104,10 +133,16 @@ class WebServiceManager {
             onError(error)
         }
     }
+    /// Return UpComming movie/serie in ThemovieDB
+    ///
+    /// - Parameters:
+    ///   - type: movie/serie
+    ///   - page: for pagination
+    ///   - onCompletion: escaping of success
+    ///   - onError: escaping of error
     func getUpCommingMovies(by type:String,page: Int , onCompletion:@escaping(ResultSearch)->Void,
                             onError:@escaping(ErrorModel)->Void){
         let requestString = Services().upcoming(by: type) + Variable().page + "\(page)"
-        print(">> Request \(requestString)")
         request(url: requestString, completion: { (data) in
             let obj = WebServiceManager().turnToObject(data: data!, type: ResultSearch.self)
             if(obj != nil){
@@ -120,6 +155,16 @@ class WebServiceManager {
     
     /*      Search Movies
      */
+    /// Search movie/serie in ThemovieDB by parameters
+    ///
+    /// - Parameters:
+    ///   - type: movie/serie
+    ///   - category: if exist top/popular/upcomming
+    ///   - keyString: string for search
+    ///   - page: for pagination
+    ///   - onCompletion: escaping of success
+    ///   - onError: escaping of error
+    
     func getSearchMovies(by type:String, category:String, keyString:String, page: Int , onCompletion:@escaping(ResultSearch)->Void,
                           onError:@escaping(ErrorModel)->Void){
         let requestString = Services().searching(by: type) + Variable().page + "\(page)" + Variable().query + "\(keyString)"
@@ -139,10 +184,16 @@ class WebServiceManager {
     }
     
     /* GetVideo */
+    /// REturn object with Video key for Youtube
+    ///
+    /// - Parameters:
+    ///   - type: tv/moive
+    ///   - idString: id of ty/movie
+    ///   - onCompletion: escaping of success with object VideoSearch
+    ///   - onError: escaping of error
     func getVideoContent(by type:String , idString:String , onCompletion:@escaping(VideoSearch)->Void,
                           onError:@escaping(ErrorModel)->Void){
         let requestString = Services().getVideo(by: type , idString: idString)
-        print(">> Request \(requestString)")
         requestData(url: requestString) { (response) in
             
             let decoder = JSONDecoder()

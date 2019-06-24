@@ -12,6 +12,9 @@ import CoreData
 class CoreDataHandler : UIViewController{
     
     
+    /// Save All geners in CoreData
+    ///
+    /// - Parameter singleGen: Model of Geners
     static func saveGeners(singleGen : StandarModel)  {
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate!.persistentContainer.viewContext
@@ -28,6 +31,12 @@ class CoreDataHandler : UIViewController{
         }
     }
     
+    /// Save Movies/Series in Coredata, dependen for parameters
+    ///
+    /// - Parameters:
+    ///   - singleFilm: Object General
+    ///   - category: can Top/Popular/Upcomming
+    ///   - type: movie/tv
     static func saveFilm(singleFilm : Film , category:String , type:String)  {
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate!.persistentContainer.viewContext
@@ -60,6 +69,9 @@ class CoreDataHandler : UIViewController{
     
     
     
+    /// Return Geners on CoreData in Array Objects
+    ///
+    /// - Returns: Array StandarModel of Generes
     static func getAllGeners() -> [StandarModel]{
         
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
@@ -81,6 +93,12 @@ class CoreDataHandler : UIViewController{
     }
     
     
+    /// Get Movie/Serie in Array the Codeable Objects
+    ///
+    /// - Parameters:
+    ///   - category: search in three forms
+    ///   - type: movie or tv
+    /// - Returns: Array with Object by parameters
     static func getAllMovalid(by category: String, type : String) -> [Film]{
         
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
@@ -106,6 +124,12 @@ class CoreDataHandler : UIViewController{
         return arrayGeners
     }
     
+    /// Method for search Movie/Series by category and letter in Title
+    ///
+    /// - Parameters:
+    ///   - category:
+    ///   - string: can Top/Popular/Upcomming
+    /// - Returns: Array with Object Film by parameters
     static func getAllMovalid(by category: String, string:String) -> [Film]{
         
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
@@ -134,6 +158,10 @@ class CoreDataHandler : UIViewController{
     }
     
     
+    /// Search and return geners name by id
+    ///
+    /// - Parameter byId: id of generes inside the Object Film
+    /// - Returns: array of geners
     static func findGeners(byId: Int32) -> [Gener]{
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate!.persistentContainer.viewContext
@@ -172,6 +200,12 @@ class CoreDataHandler : UIViewController{
             print("Detele all data in \(entity) error :", error)
         }
     }
+    /// YOu can delete Data in CoreData with this has some parameters
+    ///
+    /// - Parameters:
+    ///   - entity: is de CoreData Objects
+    ///   - category: search in three forms
+    ///   - type: movie or tv
     static func deleteData(entity : String , category: String, type:String) {
         let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
         let managedContext = appDelegate!.persistentContainer.viewContext

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aM3-kq-Qsd">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController storyboardIdentifier="search" id="aM3-kq-Qsd" customClass="SearchViewController" customModule="Movalid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ndX-Wz-T85">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjs-wS-HZ6">
-                                <rect key="frame" x="0.0" y="44" width="414" height="140"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDI-Dw-OGw">
-                                        <rect key="frame" x="40" y="47" width="53" height="20"/>
+                                        <rect key="frame" x="40" y="59" width="53" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="53" id="Maw-zX-99m"/>
                                             <constraint firstAttribute="height" constant="20" id="ced-Gr-39s"/>
@@ -31,8 +31,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Movie" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhI-GD-K1d">
-                                        <rect key="frame" x="20" y="67" width="374" height="44"/>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Movie, Serie ..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhI-GD-K1d">
+                                        <rect key="frame" x="20" y="79" width="335" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="rIc-DU-B5S"/>
                                         </constraints>
@@ -55,22 +55,35 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MVa-2c-32j">
+                                        <rect key="frame" x="84.5" y="23" width="206" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="206" id="2Ji-cE-tfg"/>
+                                            <constraint firstAttribute="height" constant="31" id="2Kf-pm-xAi"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Movie"/>
+                                            <segment title="Serie"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.35609710220000002" green="0.4740762711" blue="0.95929414030000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.11346504837274551" green="0.11340785771608353" blue="0.1532081663608551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="wDI-Dw-OGw" firstAttribute="leading" secondItem="vjs-wS-HZ6" secondAttribute="leading" constant="40" id="AOM-0w-FqZ"/>
                                     <constraint firstItem="2O5-ME-cvn" firstAttribute="leading" secondItem="vjs-wS-HZ6" secondAttribute="leading" constant="23" id="Fep-Ab-9jI"/>
                                     <constraint firstAttribute="trailing" secondItem="RhI-GD-K1d" secondAttribute="trailing" constant="20" id="HJp-k0-GpF"/>
+                                    <constraint firstItem="MVa-2c-32j" firstAttribute="top" secondItem="vjs-wS-HZ6" secondAttribute="top" constant="23" id="JxX-en-ds5"/>
                                     <constraint firstItem="2O5-ME-cvn" firstAttribute="top" secondItem="vjs-wS-HZ6" secondAttribute="top" constant="8" id="NIh-oD-3yL"/>
+                                    <constraint firstItem="MVa-2c-32j" firstAttribute="centerX" secondItem="vjs-wS-HZ6" secondAttribute="centerX" id="Pwc-4F-bKr"/>
                                     <constraint firstAttribute="height" constant="140" id="WQA-fI-OTT"/>
-                                    <constraint firstItem="wDI-Dw-OGw" firstAttribute="top" secondItem="2O5-ME-cvn" secondAttribute="bottom" constant="5" id="ZGz-ZQ-NU6"/>
+                                    <constraint firstItem="wDI-Dw-OGw" firstAttribute="top" secondItem="2O5-ME-cvn" secondAttribute="bottom" constant="17" id="ZGz-ZQ-NU6"/>
                                     <constraint firstItem="RhI-GD-K1d" firstAttribute="leading" secondItem="vjs-wS-HZ6" secondAttribute="leading" constant="20" id="oMQ-Rv-HfN"/>
                                     <constraint firstItem="RhI-GD-K1d" firstAttribute="top" secondItem="wDI-Dw-OGw" secondAttribute="bottom" id="qep-jS-RdZ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKr-hP-mmw">
-                                <rect key="frame" x="0.0" y="172" width="414" height="690"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="507"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.11346504837274551" green="0.11340785771608353" blue="0.1532081663608551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,7 +92,7 @@
                             <constraint firstItem="vjs-wS-HZ6" firstAttribute="trailing" secondItem="Oo7-FU-iM4" secondAttribute="trailing" id="a7z-ZB-jdJ"/>
                             <constraint firstItem="vjs-wS-HZ6" firstAttribute="leading" secondItem="Oo7-FU-iM4" secondAttribute="leading" id="aVc-KD-4PO"/>
                             <constraint firstItem="vjs-wS-HZ6" firstAttribute="top" secondItem="Oo7-FU-iM4" secondAttribute="top" id="gi5-lP-oLv"/>
-                            <constraint firstItem="mKr-hP-mmw" firstAttribute="top" secondItem="vjs-wS-HZ6" secondAttribute="bottom" constant="-12" id="l4U-nq-4Vb"/>
+                            <constraint firstItem="mKr-hP-mmw" firstAttribute="top" secondItem="vjs-wS-HZ6" secondAttribute="bottom" id="l4U-nq-4Vb"/>
                             <constraint firstItem="mKr-hP-mmw" firstAttribute="leading" secondItem="Oo7-FU-iM4" secondAttribute="leading" id="qCs-JV-wZm"/>
                             <constraint firstItem="mKr-hP-mmw" firstAttribute="bottom" secondItem="Oo7-FU-iM4" secondAttribute="bottom" id="ynz-3g-cke"/>
                         </constraints>
@@ -88,15 +101,16 @@
                     <connections>
                         <outlet property="btnGoBack" destination="2O5-ME-cvn" id="3DC-0l-BBc"/>
                         <outlet property="searchBar" destination="RhI-GD-K1d" id="v9V-o7-qnl"/>
+                        <outlet property="segmentType" destination="MVa-2c-32j" id="vUi-he-jt3"/>
                         <outlet property="whiteView" destination="mKr-hP-mmw" id="1xx-K6-Blv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k8-bD-4GJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="496.80000000000001" y="-455.62218890554726"/>
+            <point key="canvasLocation" x="495.6521739130435" y="-456.02678571428567"/>
         </scene>
     </scenes>
     <resources>
-        <image name="goBack" width="33" height="33"/>
+        <image name="goBack" width="25" height="25"/>
     </resources>
 </document>
