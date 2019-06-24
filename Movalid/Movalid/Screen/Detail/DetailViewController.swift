@@ -70,7 +70,12 @@ class DetailViewController: BaseViewController {
                 }
             }.disposed(by: disposeBag)
         imgGeneral.cacheImage(urlString: WebService.urlImage + (filmShow?.poster_path)! )
-        lblTitle.text = filmShow?.title
+        
+        if (filmShow?.type == nil ) {
+            lblTitle.text = filmShow?.name
+        }else{
+            lblTitle.text = filmShow?.title
+        }
         lblDate.text = filmShow?.release_date
         txtResumen.text = filmShow?.overview
         
