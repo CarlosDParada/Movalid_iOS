@@ -187,7 +187,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate , UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let filmSelected : Film = HandlerData.getContentBySituation()[indexPath.row]
-        let goToVC : UIViewController = ViewControllerExtension.detailViewController(byFilm: filmSelected)
+        let goToVC : UIViewController = ViewControllerExtension.detailViewController(byFilm: filmSelected , typeContent: HandlerData.getTypeContentString(by: self.segmentTypeContent.selectedSegmentIndex))
         self.present(goToVC, animated: true) {
             self.removeFromParent()
         }

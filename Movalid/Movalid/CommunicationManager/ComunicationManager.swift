@@ -139,9 +139,9 @@ class WebServiceManager {
     }
     
     /* GetVideo */
-    func getVideoContent(by type:String, onCompletion:@escaping(VideoSearch)->Void,
+    func getVideoContent(by type:String , idString:String , onCompletion:@escaping(VideoSearch)->Void,
                           onError:@escaping(ErrorModel)->Void){
-        let requestString = Services().getVideo(by: type) 
+        let requestString = Services().getVideo(by: type , idString: idString)
         print(">> Request \(requestString)")
         requestData(url: requestString) { (response) in
             
@@ -150,7 +150,7 @@ class WebServiceManager {
             print(obj)
             if(obj.isSuccess){
                 obj.flatMap({ popularMoviesObjet in
-                    //https://www.youtube.com/watch?v=Im4odVLNxqo
+                    
                     onCompletion(popularMoviesObjet)
                 })
             }else{

@@ -66,7 +66,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k24-yg-rsx">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k24-yg-rsx">
                                                 <rect key="frame" x="40" y="55" width="334" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="1eR-C8-r4Y"/>
@@ -103,7 +103,7 @@
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                            <integer key="value" value="2"/>
+                                                                            <integer key="value" value="4"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRadius">
                                                                             <integer key="value" value="2"/>
@@ -115,7 +115,7 @@
                                                                 </view>
                                                             </subviews>
                                                         </view>
-                                                        <color key="tintColor" red="0.35609710220000002" green="0.4740762711" blue="0.95929414030000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" red="0.30588235289999999" green="0.57254901960000004" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="5Jn-zK-PUb" firstAttribute="leading" secondItem="aXb-jh-7dK" secondAttribute="leading" id="MTt-kF-bY2"/>
                                                             <constraint firstItem="5Jn-zK-PUb" firstAttribute="top" secondItem="aXb-jh-7dK" secondAttribute="top" id="QnT-kX-SuA"/>
@@ -129,6 +129,10 @@
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="j5x-Fk-zJK" id="Vun-Bb-dur"/>
+                                                    <outlet property="delegate" destination="j5x-Fk-zJK" id="O4O-5l-6gb"/>
+                                                </connections>
                                             </collectionView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmp-6n-lFn">
                                                 <rect key="frame" x="40" y="95" width="334" height="1"/>
@@ -232,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSU-pb-vL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104.8" y="157.87106446776613"/>
+            <point key="canvasLocation" x="-399" y="36"/>
         </scene>
     </scenes>
     <resources>

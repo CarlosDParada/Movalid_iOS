@@ -12,25 +12,30 @@ import RxCocoa
 
 class DetailViewModel: BaseViewModel {
     
+    
+    let isSuccessVideo = BehaviorRelay<VideoSearch?>(value: nil)
+    
     override init() {
         CommunicationManager.shared.initialization()
     }
     
-    func getVideoContent(_ idString: String){
+    func getVideoContent(by type: String , stringKey: String){
         if !Connectivity.isConnectedToInternet() {
             DataLocal.shared.geners = CoreDataHandler.getAllGeners()
             self.getPopularMovies(by: Content.movie)
         }else{
-            requestVideoContent(idString)
+            requestVideoContent(bytype: type, idKey: stringKey)
         }
     }
     
-    func requestVideoContent(_ idString: String){
+    func requestVideoContent(bytype: String , idKey: String){
         self.isLoading.accept(true)
         
-        WebServiceManager().getVideoContent(by: idString , onCompletion: { (videoSearch) in
-            
+        WebServiceManager().getVideoContent(by: bytype , idString: idKey , onCompletion: { (videoSearch) in
+            self.isLoading.accept(false)
+            self.isSuccessVideo.accept(videoSearch)
         }) { (error) in
+            self.isLoading.accept(false)
             self.isErrorData.accept(error )
         }
     }

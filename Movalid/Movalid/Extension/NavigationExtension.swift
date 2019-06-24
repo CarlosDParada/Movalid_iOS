@@ -19,8 +19,8 @@ class NavigationExtension: NSObject {
         let navigationController = UINavigationController(rootViewController: ViewControllerExtension.searchViewController())
         return navigationController
     }
-    static func detailViewController(by film:Film) -> UINavigationController{
-        let navigationController = UINavigationController(rootViewController: ViewControllerExtension.detailViewController(byFilm: film))
+    static func detailViewController(by film:Film , typeContent:String)  -> UINavigationController{
+        let navigationController = UINavigationController(rootViewController: ViewControllerExtension.detailViewController(byFilm: film ,typeContent: typeContent))
         return navigationController
     }
 }
@@ -39,11 +39,12 @@ class ViewControllerExtension: NSObject {
             SearchViewController ?? SearchViewController.init()
         return homeVC
     }
-    static func detailViewController(byFilm:Film) -> DetailViewController{
+    static func detailViewController(byFilm:Film , typeContent:String) -> DetailViewController{
         let storyboard = UIStoryboard.init(name: "DetailStoryboard" , bundle: nil)
         let detailVC : DetailViewController = storyboard.instantiateViewController(withIdentifier: "detail") as?
             DetailViewController ?? DetailViewController.init()
         detailVC.filmShow = byFilm
+        detailVC.typeContent = typeContent
         return detailVC
     }
 }

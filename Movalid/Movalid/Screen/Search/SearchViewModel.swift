@@ -19,6 +19,7 @@ class SearchViewModel: NSObject {
     let isSuccessData = BehaviorRelay<[Film]>(value: [])
     let isErrorData = BehaviorRelay<ErrorModel>(value: ErrorHandle.errorGeneric())
     let isLoading = BehaviorRelay<Bool>(value: false)
+    let films: BehaviorRelay<[Film]> = BehaviorRelay(value: [])
     
     override init() {
         CommunicationManager.shared.initialization()
