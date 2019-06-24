@@ -32,7 +32,8 @@ class SearchViewController: BaseViewController  {
         setUpSearchBar()
         tableView.frame = self.whiteView.frame
         view.addSubview(tableView)
-        tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchItemCell")
+//        tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchItemCell")
+        tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "searchItemCell")
     }
     
     private func setUpSearchBar() {
@@ -81,6 +82,7 @@ class SearchViewController: BaseViewController  {
         contents.bind(to: tableView.rx.items) { (tableView, row, element) in
             let indexPath = IndexPath(row: row, section: 0)
             let cell = tableView.dequeueReusableCell(withIdentifier: "searchItemCell", for: indexPath) as! SearchTableViewCell
+
             cell.setupByContent(by: element)
             return cell
             }

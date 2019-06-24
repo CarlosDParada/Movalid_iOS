@@ -172,9 +172,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2007" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POh-sj-jZT">
-                                                            <rect key="frame" x="285" y="75" width="50" height="10"/>
+                                                            <rect key="frame" x="185" y="75" width="150" height="10"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="3N9-vX-0jO"/>
+                                                                <constraint firstAttribute="width" constant="150" id="3N9-vX-0jO"/>
                                                                 <constraint firstAttribute="height" constant="10" id="tph-C3-OAM"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="10"/>
@@ -263,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1537" y="-544"/>
+            <point key="canvasLocation" x="-1538.4000000000001" y="-544.67766116941539"/>
         </scene>
     </scenes>
     <resources>

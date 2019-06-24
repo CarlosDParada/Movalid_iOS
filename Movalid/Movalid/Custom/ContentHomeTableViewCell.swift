@@ -24,7 +24,7 @@ class ContentHomeTableViewCell: UITableViewCell  {
         }else{
             self.lblTitle.text = item.title
         }
-        self.lblDate.text = item.release_date
+        self.lblDate.text = Date.getFormattedDate(string:item.release_date ?? "2001-10-2")
         self.lblSumary.text = item.overview
     }
     

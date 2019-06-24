@@ -14,6 +14,7 @@ struct WebService {
     
     static let urlBase    = "https://api.themoviedb.org/3"//3
     static let urlImage    = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/"
+    static let urlImageSearch    = "https://image.tmdb.org/t/p/w600_and_h900_bestv2"
     /*
      https:2//image.tmdb.org/t/p/w600_and_h900_bestv2/3iYQTLGoy7QnjcUYRJy4YrAgGvp.jpg
      */

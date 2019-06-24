@@ -38,29 +38,53 @@ extension UITableViewCell{
 
 
 //Extension used for image cache
+//let imageCache = NSCache<AnyObject, AnyObject>()
+//extension UIImageView {
+//    func cacheImage(urlString: String){
+//        let url = URL(string: urlString)
+//
+//        image = nil
+//
+//        self.layer.masksToBounds = false
+//        self.layer.cornerRadius = 10
+//        self.clipsToBounds = true
+//
+//        self.autoresizingMask = [.flexibleTopMargin,.flexibleHeight,.flexibleWidth]
+//        self.translatesAutoresizingMaskIntoConstraints = false
+//        self.contentMode = .scaleAspectFill
+//
+//        if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
+//            self.image = imageFromCache
+//            return
+//        }
+//
+//        URLSession.shared.dataTask(with: url!) {
+//            data, response, error in
+//            if data != nil {
+//                DispatchQueue.main.async {
+//                    let imageToCache = UIImage(data: data!)
+//                    imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)
+//                    self.image = imageToCache
+//                }
+//            }
+//            }.resume()
+//    }
+//}
+
 let imageCache = NSCache<AnyObject, AnyObject>()
 extension UIImageView {
     func cacheImage(urlString: String){
         let url = URL(string: urlString)
-        
         image = nil
-        
-        self.layer.masksToBounds = false
-        self.layer.cornerRadius = 10
-        self.clipsToBounds = true
-        
-        self.autoresizingMask = [.flexibleTopMargin,.flexibleHeight,.flexibleWidth]
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.contentMode = .scaleAspectFill
         
         if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
             self.image = imageFromCache
             return
         }
-        
+        print(">> \(urlString)")
         URLSession.shared.dataTask(with: url!) {
             data, response, error in
-            if data != nil {
+            if let response = data {
                 DispatchQueue.main.async {
                     let imageToCache = UIImage(data: data!)
                     imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)
@@ -70,7 +94,6 @@ extension UIImageView {
             }.resume()
     }
 }
-
 
 extension UIFont {
     private static func customFont(name: String, size: CGFloat) -> UIFont {
@@ -96,5 +119,18 @@ extension UIImage {
     }
     static func navSearchIcon () -> UIImage {
         return customImage(name: "search")
+    }
+}
+extension Date {
+    static func getFormattedDate(string: String) -> String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM dd,yyyy"
+        var temData = string
+        if(temData == ""){temData = "2010-08-12"}
+        let date: Date? = dateFormatterGet.date(from: temData)
+//        print("Date",dateFormatterPrint.string(from: date!)) // Feb 01,2018
+        return dateFormatterPrint.string(from: date!);
     }
 }
