@@ -14,11 +14,13 @@ class SearchViewController: BaseViewController  {
     
     @IBOutlet weak var btnGoBack: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var spinner : UIActivityIndicatorView!
-
+    @IBOutlet weak var whiteView: UIView!
+    
     
     var filteredContent : [Film]?
+    
+    let tableView = UITableView()
+    
     /* Rx Swift */
     let viewModel = SearchViewModel()
     let disposeBag = DisposeBag()
@@ -27,17 +29,14 @@ class SearchViewController: BaseViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         removeNavButton()
-        
         setUpSearchBar()
+        tableView.frame = self.whiteView.frame
+        view.addSubview(tableView)
+        tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: "searchItemCell")
     }
     
     private func setUpSearchBar() {
         searchBar.delegate = self
-    }
-    
-    func configView(){
-        
-        self.tableView.delegate = self
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -59,14 +58,6 @@ class SearchViewController: BaseViewController  {
                 }
             }.disposed(by: disposeBag)
         
-        viewModel.isLoading.asObservable().bind { value in
-            if value {
-                self.showLoadignView()
-            }else{
-                self.removeLoadingView()
-            }
-            }.disposed(by: disposeBag)
-        
         btnGoBack.rx.tap
             .bind{
                 self.dismiss(animated: true, completion: nil)
@@ -76,43 +67,55 @@ class SearchViewController: BaseViewController  {
             .subscribe( onNext: { filSearch in
                 print(filSearch)
                 if(filSearch.count > 0){
-                    self.filteredContent = filSearch
+                    self.contents.accept(filSearch)
                 }})
-                .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
-        contents.bind(to: tableView.rx.items(cellIdentifier: "cell")) {
-            row, model, cell in
-            cell.textLabel?.text = "\(model.name), \(model.desc)"
-            }.disposed(by: disposeBag)
+//        contents.bind(to: tableView.rx.items(cellIdentifier : "searchItemCell")) {
+//            row, model, cell in
+//            cell.textLabel?.text = "\(model.title!), \(model.release_date!)"
+//            cell.textLabel?.numberOfLines = 0
+//            cell.selectionStyle = .none
+//            }.disposed(by: disposeBag)
+        
+        contents.bind(to: tableView.rx.items) { (tableView, row, element) in
+            let indexPath = IndexPath(row: row, section: 0)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchItemCell", for: indexPath) as! SearchTableViewCell
+            cell.setupByContent(by: element)
+            return cell
+            }
+            .disposed(by: disposeBag)
+        
         
         tableView.rx.modelSelected(Film.self)
-            .map{ URL(string: $0.url) }
-            .subscribe(onNext: { [weak self] url in
-                guard let url = url else {
-                    return
-                }
-                self?.present(SFSafariViewController(url: url), animated: true)
+            .map {$0.title }
+            .subscribe(onNext: { title in
+                // Alert with advertis
+                print(title ?? " - ")
             }).disposed(by: disposeBag)
     }
 }
-extension SearchViewController : UITableViewDelegate , UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredContent?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
-        cell.accessoryType = .disclosureIndicator
-        cell.detailTextLabel?.text = filteredContent[indexPath.row].title
-        return cell
-    }
-    
-    
-}
+
+//extension SearchViewController : UITableViewDelegate , UITableViewDataSource{
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return filteredContent?.count ?? 0
+//    }
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
+//        return cell
+//    }
+//}
 
 extension SearchViewController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.getSearchMovies(by: "movie" , category: "movie", key: searchText)
+        let whitespaceSet = NSCharacterSet.whitespaces
+        let range = searchText.rangeOfCharacter(from: whitespaceSet)
+        
+        if let _ =  searchText.rangeOfCharacter(from: whitespaceSet) {
+            self.searchBar.text = ""
+        }
+        else {
+            viewModel.getSearchMovies(by: "movie" , category: "movie", key: searchText)
+        }
     }
 }

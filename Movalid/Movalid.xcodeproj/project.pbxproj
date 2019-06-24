@@ -137,6 +137,9 @@
 		D907BFD022C028CF002E9033 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769600D22BE972A001800E5 /* LoadingViewModel.swift */; };
 		D907BFD122C028D3002E9033 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695F9822BDA17E001800E5 /* HomeViewController.swift */; };
 		D907BFD222C028D4002E9033 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07695F9822BDA17E001800E5 /* HomeViewController.swift */; };
+		D907C04622C06BCD002E9033 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D907C04222C06BCD002E9033 /* SearchTableViewCell.xib */; };
+		D907C04722C06BCD002E9033 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D907C04222C06BCD002E9033 /* SearchTableViewCell.xib */; };
+		D907C04822C06BCD002E9033 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D907C04222C06BCD002E9033 /* SearchTableViewCell.xib */; };
 		D934AAE622BFEC46005E32D1 /* Movalid+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934AAE422BFEC46005E32D1 /* Movalid+CoreDataClass.swift */; };
 		D934AAE722BFEC46005E32D1 /* Movalid+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934AAE522BFEC46005E32D1 /* Movalid+CoreDataProperties.swift */; };
 		F6B88CFB628BFD5AEE0F88FA /* Pods_Movalid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA9F5CF5EB399C12B727C24 /* Pods_Movalid.framework */; };
@@ -233,6 +236,7 @@
 		C09A91256BC5A1FF9EC91257 /* Pods-Movalid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movalid.release.xcconfig"; path = "Target Support Files/Pods-Movalid/Pods-Movalid.release.xcconfig"; sourceTree = "<group>"; };
 		D907BFAF22C020B3002E9033 /* VideoSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSearch.swift; sourceTree = "<group>"; };
 		D907BFB122C0245B002E9033 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		D907C04222C06BCD002E9033 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		D934AAE422BFEC46005E32D1 /* Movalid+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movalid+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D934AAE522BFEC46005E32D1 /* Movalid+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movalid+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F9A5BE65A3094EE99E42D4FE /* Pods-MovalidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovalidTests.release.xcconfig"; path = "Target Support Files/Pods-MovalidTests/Pods-MovalidTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 		07313FD922BEDDE900D52B61 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				D907C04022C06BA7002E9033 /* Cell */,
 				07313FDA22BEDDFA00D52B61 /* CustomButton.swift */,
 				07313FF222BF01F200D52B61 /* GenersCollectionViewCell.swift */,
 				07313FEA22BEF55300D52B61 /* ContentHomeTableViewCell.swift */,
@@ -497,6 +502,14 @@
 			path = External;
 			sourceTree = "<group>";
 		};
+		D907C04022C06BA7002E9033 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D907C04222C06BCD002E9033 /* SearchTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -612,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07313FC122BEA7FB00D52B61 /* Localizable.strings in Resources */,
+				D907C04622C06BCD002E9033 /* SearchTableViewCell.xib in Resources */,
 				07695FA422BDA17F001800E5 /* LaunchScreen.storyboard in Resources */,
 				07313FD622BED7E000D52B61 /* DetailStoryboard.storyboard in Resources */,
 				07695FA122BDA17F001800E5 /* Assets.xcassets in Resources */,
@@ -626,6 +640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0769600922BE93FF001800E5 /* LoadingStoryboard.storyboard in Resources */,
+				D907C04722C06BCD002E9033 /* SearchTableViewCell.xib in Resources */,
 				07313FD322BED7D400D52B61 /* SearchStoryboard.storyboard in Resources */,
 				07313FD722BED7E000D52B61 /* DetailStoryboard.storyboard in Resources */,
 			);
@@ -637,6 +652,7 @@
 			files = (
 				07313FD822BED7E000D52B61 /* DetailStoryboard.storyboard in Resources */,
 				07313FD422BED7D400D52B61 /* SearchStoryboard.storyboard in Resources */,
+				D907C04822C06BCD002E9033 /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

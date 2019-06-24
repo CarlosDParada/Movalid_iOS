@@ -11,7 +11,6 @@ import AVKit
 import AVFoundation
 import RxCocoa
 import RxSwift
-import XCDYouTubeKit
 
 
 class DetailViewController: BaseViewController {
