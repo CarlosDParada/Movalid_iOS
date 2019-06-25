@@ -5,10 +5,10 @@
 > Las películas y series son tomadas de la API "The Movie Database API" (https://developers.themoviedb.org/4/getting-started/authorization)
 
 ### Info:
-XCode 10.2.1
-Swift 5
-Alamofire 4.8.2
-RxSwift 4.0 (Programación reactiva)
+- XCode 10.2.1
+- Swift 5
+- Alamofire 4.8.2
+- RxSwift 4.0 (Programación reactiva)
 
 ## Capturas de pantalla
 
