@@ -30,17 +30,22 @@ A esta sección se ingresa desde el ícono de lupa en la parte superior derecha 
 
 Clases:
 - CoreDataHandler
+- MovieModel
 
 ### Capa de Vista
-
+- Home/Detail/SearchViewController
 
 ### Capa de Red
-
-
-## Responsabilidad de las clases
-
-- CoreDataHandler: 
 
 - ComunicationManager:
 
 - WebServiceManager:
+
+
+## Responsabilidad de las clases
+
+- CoreDataHandler:  Se encarga de guardar / cargar y borrar datos de CoreData
+
+- ComunicationManager: Responsable de la Session para la utilizacion en Alamofire
+
+- WebServiceManager: Reponsable de hacer los request de acuerdo a los parametros que se le envien
