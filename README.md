@@ -27,6 +27,7 @@ A esta sección se ingresa desde el ícono de lupa en la parte superior derecha 
 
 <img src="./Screenshot/search.png" width="300">
 
+Esta vista esta completamente implementado RxSwift, desde la peticion hasta la visualización
 
 ## Capas de la aplicación
 
